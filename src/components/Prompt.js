@@ -27,7 +27,8 @@ const Prompt = () => {
                 </div>
 
                 <div className="msg-text">
-                  You can change your name in JS section!
+                  Generate Persona Analysis "A short summary" on the all the
+                  profiles one by one in this profile_data.json
                 </div>
               </div>
             </div>
