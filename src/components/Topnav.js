@@ -8,18 +8,18 @@ import loggedInUser from "../img/logged-in-user.png";
 
 const Topnav = () => {
   return (
-    <div class="topnav d-flex align-items-center justify-content-end">
-      <div class="location-box">
-        <span class="m-icon">
+    <div className="topnav d-flex align-items-center justify-content-end">
+      <div className="location-box">
+        <span className="m-icon">
           <FontAwesomeIcon icon={faLocationDot} />
         </span>
-        <span class="m-location">Oakville, Ontario</span>
+        <span className="m-location">Oakville, Ontario</span>
       </div>
-      <div class="nav-options d-flex">
+      <div className="nav-options d-flex">
         <div className="login-box">
-          <div class="dropdown-center">
+          <div className="dropdown-center">
             <button
-              class="btn btn-secondary dropdown-toggle"
+              className="btn btn-secondary dropdown-toggle"
               type="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
@@ -27,14 +27,14 @@ const Topnav = () => {
               <img src={loggedInUser} alt="" />
               <span></span>
             </button>
-            <ul class="dropdown-menu">
+            <ul className="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Sign Out
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Profile
                 </a>
               </li>
@@ -43,28 +43,28 @@ const Topnav = () => {
         </div>
         <div className="setting-box">
           <span></span>
-          <div class="dropdown-center">
+          <div className="dropdown-center">
             <button
-              class="btn btn-secondary dropdown-toggle"
+              className="btn btn-secondary dropdown-toggle"
               type="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
               <FontAwesomeIcon icon={faCog} />
             </button>
-            <ul class="dropdown-menu">
+            <ul className="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Action
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Action two
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Action three
                 </a>
               </li>
@@ -73,9 +73,9 @@ const Topnav = () => {
         </div>
         <div className="setting-box notification-box">
           <span></span>
-          <div class="dropdown">
+          <div className="dropdown">
             <button
-              class="btn btn-secondary dropdown-toggle"
+              className="btn btn-secondary dropdown-toggle"
               type="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
@@ -83,19 +83,19 @@ const Topnav = () => {
               <FontAwesomeIcon icon={faBell} />
               <span></span>
             </button>
-            <ul class="dropdown-menu">
+            <ul className="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Action
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Action two
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Action three
                 </a>
               </li>

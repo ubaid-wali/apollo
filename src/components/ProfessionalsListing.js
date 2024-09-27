@@ -5,127 +5,108 @@ import {
   faArrowRightLong,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import accentureIcon from "../img/c-icons/accenture-icon.png";
-import amz from "../img/c-icons/amazon-icon.png";
-import ebay from "../img/c-icons/ebay-icon.png";
-import adidas from "../img/c-icons/addidas-icon.png";
-import nivea from "../img/c-icons/nivea-icon.png";
-import upwork from "../img/c-icons/upwork-icon.png";
+import brooklyn from "../img/p-imgs/brooklyn.png";
+import kristin from "../img/p-imgs/kristin.png";
+import jacob from "../img/p-imgs/jacob.png";
+import cody from "../img/p-imgs/cody.png";
+import brooklyn2 from "../img/p-imgs/brooklyn-2.png";
+import kristin2 from "../img/p-imgs/kristin-2.png";
+import jacob2 from "../img/p-imgs/jacob-2.png";
+import cody2 from "../img/p-imgs/cody-2.png";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { useEffect, useState } from "react";
 
-const companyData = [
+const peopleData = [
   {
-    logo: accentureIcon,
-    name: "Accenture",
-    desc: "Let there be change",
-    industry: "IT",
-    revenue: "2.8M",
-    employees: "700,000+",
+    logo: brooklyn,
+    name: "Brooklyn Simmons",
+    desc: "Chair & C.E.O",
+    company: "Amazaon",
+    linkedin: "in/brooklyns",
+    industry: "E-Commerce",
     location: "Brazil/São Paulo",
-    technology: "Accounting , IT Much More...",
-    link: "/company-profile",
+    date: "21/12/2022",
+    link: "/professional-profile",
   },
   {
-    logo: amz,
-    name: "Amazon",
-    desc: "Let there be change",
+    logo: kristin,
+    name: "Kristin Watson",
+    desc: "C.T.O",
+    company: "Ebay",
+    linkedin: "in/kristinw",
     industry: "E-Commerce",
-    revenue: "148B",
-    employees: "1,608,000",
     location: "Washington",
-    technology: "Accounting , IT Much More...",
-    link: "/company-profile",
+    date: "21/12/2022",
+    link: "/professional-profile",
   },
   {
-    logo: ebay,
-    name: "Ebay",
-    desc: "Let there be change",
-    industry: "E-Commerce",
-    revenue: "10.19B",
-    employees: "12,300",
+    logo: jacob,
+    name: "Jacob Jones",
+    desc: "Director",
+    company: "Accenture",
+    linkedin: "in/jacbj",
+    industry: "Technology",
     location: "California",
-    technology: "Accounting , IT Much More...",
-    link: "/company-profile",
+    date: "21/12/2022",
+    link: "/professional-profile",
   },
   {
-    logo: adidas,
-    name: "Adidas",
-    desc: "Let there be change",
-    industry: "Textile",
-    revenue: "10.19B",
-    employees: "100,000+",
+    logo: cody,
+    name: "Cody Fisher",
+    desc: "Executive",
+    company: "Freelancer",
+    linkedin: "in/codyf",
+    industry: "Contractors",
     location: "Germany",
-    technology: "Accounting , IT Much More...",
-    link: "/company-profile",
+    date: "21/12/2022",
+    link: "/professional-profile",
   },
   {
-    logo: nivea,
-    name: "Nivea",
-    desc: "Let there be change",
-    industry: "Product",
-    revenue: "10.19B",
-    employees: "100,000+",
+    logo: brooklyn2,
+    name: "Brooklyn Simmons",
+    desc: "Manager",
+    company: "Upwork",
+    linkedin: "in/brooklyns",
+    industry: "Contractors",
     location: "Germany",
-    technology: "Accounting , IT Much More...",
-    link: "/company-profile",
+    date: "21/12/2022",
+    link: "/professional-profile",
   },
   {
-    logo: upwork,
-    name: "Upwork",
-    desc: "Let there be change",
-    industry: "Marketplace",
-    revenue: "10.19B",
-    employees: "100,000+",
+    logo: kristin2,
+    name: "Kristin Watson",
+    desc: "Specialists",
+    company: "99design",
+    linkedin: "in/kristinw",
+    industry: "Contractors",
     location: "San Francisco",
-    technology: "Accounting , IT Much More...",
-    link: "/company-profile",
+    date: "21/12/2022",
+    link: "/professional-profile",
+  },
+  {
+    logo: jacob2,
+    name: "Jacob Jones",
+    desc: "Creative Director",
+    company: "Fiver",
+    linkedin: "in/jacbj",
+    industry: "Contractors",
+    location: "San Francisco",
+    date: "21/12/2022",
+    link: "/professional-profile",
+  },
+  {
+    logo: cody2,
+    name: "Cody Fisher",
+    desc: "Full Slack Developer",
+    company: "Freepik",
+    linkedin: "in/codyf",
+    industry: "Contractors",
+    location: "San Francisco",
+    date: "21/12/2022",
+    link: "/professional-profile",
   },
 ];
 
-const CompanyListing = () => {
-  // State to store API data
-  const [data, setData] = useState(null);
-
-  // State to handle loading state
-  const [loading, setLoading] = useState(true);
-
-  // State to handle errors
-  const [error, setError] = useState(null);
-
-  const headers = {
-    "allow-origin": "*",
-  };
-
-  // Fetch data on component mount using axios
-  const apiUrl = "http://34.169.65.115:5000/api/v1/profiles";
-  useEffect(() => {
-    // Axios request
-    axios
-      .get(apiUrl, {
-        headers,
-      })
-      .then((response) => {
-        setData(response); // Set fetched data to state
-        setLoading(false); // Set loading to false
-      })
-      .catch((error) => {
-        setError(error.message); // Handle any error
-        setLoading(false);
-      });
-  }, []); // Empty dependency array ensures this runs only on mount
-
-  // Show loading message while fetching data
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  // Show error message if there was an error
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
+const ProfessionalsListing = () => {
   return (
     <div className="container-fluid">
       <div className="row">
@@ -135,17 +116,17 @@ const CompanyListing = () => {
               <thead>
                 <tr>
                   <th scope="col"></th>
-                  <th scope="col">Company Name</th>
-                  <th scope="col">Industry </th>
-                  <th scope="col">Annual Revenue</th>
-                  <th scope="col">Employees</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Company </th>
+                  <th scope="col">Linkedin</th>
+                  <th scope="col">Industry</th>
                   <th scope="col">Location</th>
-                  <th scope="col">Technologies</th>
+                  <th scope="col">Date</th>
                   <th scope="col"></th>
                 </tr>
               </thead>
               <tbody className="">
-                {companyData.map((company, index) => (
+                {peopleData.map((company, index) => (
                   <tr key={index}>
                     <td>
                       <div className="img-box">
@@ -158,11 +139,11 @@ const CompanyListing = () => {
                         <p className="c-detail"> {company.desc}</p>
                       </div>
                     </td>
+                    <td>{company.company}</td>
+                    <td>{company.linkedin}</td>
                     <td>{company.industry}</td>
-                    <td>{company.revenue}</td>
-                    <td>{company.employees}</td>
-                    <td>{company.technology}</td>
                     <td>{company.location}</td>
+                    <td>{company.date}</td>
                     <td>
                       <Link to={company.link} className="arrow-box">
                         <FontAwesomeIcon icon={faArrowRightLong} />
@@ -227,9 +208,8 @@ const CompanyListing = () => {
             </div>
           </div>
         </div>
-        <div className="col-md-12">{JSON.stringify(data, null, 2)}</div>
       </div>
     </div>
   );
 };
-export default CompanyListing;
+export default ProfessionalsListing;

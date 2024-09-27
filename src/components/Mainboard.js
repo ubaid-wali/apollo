@@ -5,24 +5,22 @@ import ProfessionalProfile from "./ProfessionalProfile";
 import CompanyListing from "./CompanyListing";
 import dashboard from "./Dashboard";
 import { Link, Outlet } from "react-router-dom";
+import MultiStepForm from "./MultiStepForm";
 
 const Mainboard = () => {
   return (
-    <div class="mainboard">
-      <div class="main-nav">
-        <ul class="nav">
-          <li class="nav-item d-flex">
+    <div className="mainboard">
+      <div className="main-nav">
+        <ul className="nav">
+          <li className="nav-item d-flex">
             <Link className="nav-link" to="/dashboard">
               Dashboard
             </Link>
             <Link className="nav-link" to="/company-listing">
-              Company List
+              Companies
             </Link>
-            <Link className="nav-link" to="/company-profile">
-              Company Profile
-            </Link>
-            <Link className="nav-link" to="/professional-profile">
-              Professional Profile
+            <Link className="nav-link" to="/professional-listing">
+              Profiles
             </Link>
           </li>
         </ul>

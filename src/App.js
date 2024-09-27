@@ -14,10 +14,12 @@ import CompanyProfile from "./components/CompanyProfile";
 import CompanyListing from "./components/CompanyListing";
 import Prompt from "./components/Prompt";
 import ProfessionalProfile from "./components/ProfessionalProfile";
+import SessionProgress from "./components/SessionProgress";
+import ProfessionalsListing from "./components/ProfessionalsListing";
 
 const Layout = () => {
   return (
-    <div class="h-100 d-flex">
+    <div className="h-100 d-flex">
       <Sidebar />
       <Dashboard />
     </div>
@@ -42,8 +44,16 @@ const router = createBrowserRouter([
         element: <CompanyProfile />,
       },
       {
+        path: "/professional-listing",
+        element: <ProfessionalsListing />,
+      },
+      {
         path: "/professional-profile",
         element: <ProfessionalProfile />,
+      },
+      {
+        path: "/session-progress",
+        element: <SessionProgress />,
       },
     ],
   },
@@ -51,7 +61,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div className="h-100 d-flex">
+    <div className="">
       {/* <Sidebar /> */}
       {/* <Dashboard /> */}
       <RouterProvider router={router} />

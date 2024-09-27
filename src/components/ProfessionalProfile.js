@@ -16,7 +16,7 @@ import jacobJones from "../img/jacob-jones.png";
 
 const ProfessionalProfile = () => {
   return (
-    <div class="pProfile">
+    <div className="pProfile">
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-12">
@@ -25,7 +25,7 @@ const ProfessionalProfile = () => {
                 <img src={accentureImage} alt="" />
               </div>
               <div className="content">
-                <div class="d-flex align-items-center justify-content-between">
+                <div className="d-flex align-items-center justify-content-between">
                   <h2>Accenture</h2>
                   <span>
                     <a className="website-link" href="">
@@ -70,7 +70,7 @@ const ProfessionalProfile = () => {
                       <span>Toronto, Canada</span>
                     </p>
                   </div>
-                  <div class="linkedin-box">
+                  <div className="linkedin-box">
                     <a className="linkedin-btn">
                       <FontAwesomeIcon icon={faLinkedinIn} /> Linkedin
                     </a>
@@ -78,7 +78,7 @@ const ProfessionalProfile = () => {
                 </div>
               </div>
 
-              <div class="persona">
+              <div className="persona">
                 <h4>Persona:</h4>
                 <p>
                   An experienced designer with a strong aesthetic sensibility

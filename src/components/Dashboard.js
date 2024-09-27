@@ -4,7 +4,7 @@ import Topnav from "./Topnav";
 
 const dashboard = () => {
   return (
-    <div class="dashboard">
+    <div className="dashboard">
       <Topnav />
       <Mainboard />
   

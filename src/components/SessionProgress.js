@@ -1,25 +1,15 @@
+// import btnStars from "../img/button-stars.png";
+// import apolloIcon from "../img/c-icons/apollo-icon.png";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import CompanyListing from "./CompanyListing";
+import ProgressStats from "./ProgressStats";
+
 const SessionProgress = () => {
   return (
-    <div class="session-progress">
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-3">
-            <div className="p-box">
-              <div className="p-info">
-                {/* <button></button> */}
-                <h6>Apollo</h6>
-                <span>Company Progress</span>
-              </div>
-              <div className="stats">
-                
-              </div>
-            </div>
-          </div>
-          <div className="col-md-3"></div>
-          <div className="col-md-3"></div>
-          <div className="col-md-3"></div>
-        </div>
-      </div>
+    <div className="s-progress">
+      <ProgressStats />
+      <CompanyListing />
     </div>
   );
 };

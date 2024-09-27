@@ -21,41 +21,50 @@ const Mainsearch = () => {
             <input type="text" placeholder="Search" />
           </div>
           <div className="search-options d-flex align-items-center">
-            <div class="input-group">
-              <label class="input-group-text" for="">
+            <div className="input-group">
+              <label className="input-group-text" htmlFor="">
                 <FontAwesomeIcon icon={faUser} />
               </label>
-              <select class="form-select" aria-label="Filter select">
-                <option selected>Profile Type</option>
+              <select onChange=""
+                value="Profile Type"
+                className="form-select"
+                aria-label="Filter select"
+              >
                 <option value="1">All</option>
                 <option value="2">Active</option>
                 <option value="3">Inactive</option>
               </select>
             </div>
-            <div class="input-group">
-              <label class="input-group-text" for="">
+            <div className="input-group">
+              <label className="input-group-text" htmlFor="">
                 <FontAwesomeIcon icon={faLocationPin} />
               </label>
-              <select class="form-select" aria-label="Filter select">
-                <option selected>Location</option>
+              <select onChange=""
+                value="Location"
+                className="form-select"
+                aria-label="Filter select"
+              >
                 <option value="1">All</option>
                 <option value="2">Active</option>
                 <option value="3">Inactive</option>
               </select>
             </div>
-            <div class="input-group">
-              <label class="input-group-text" for="">
+            <div className="input-group">
+              <label className="input-group-text" htmlFor="">
                 <FontAwesomeIcon icon={faBuilding} />
               </label>
-              <select class="form-select" aria-label="Filter select">
-                <option selected>Industry</option>
+              <select onChange=""
+                value="Industry"
+                className="form-select"
+                aria-label="Filter select"
+              >
                 <option value="1">All</option>
                 <option value="2">Active</option>
                 <option value="3">Inactive</option>
               </select>
             </div>
             <div className="button-box">
-              <button class="btn">Find Company</button>
+              <button className="btn">Find Company</button>
             </div>
           </div>
         </div>

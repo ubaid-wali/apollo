@@ -8,7 +8,7 @@ import justinFranci from "../img/justin-franci.png";
 
 const CompanyProfile = () => {
   return (
-    <div class="cProfile">
+    <div className="cProfile">
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-12">
@@ -17,7 +17,7 @@ const CompanyProfile = () => {
                 <img src={accentureImage} alt="" />
               </div>
               <div className="content">
-                <div class="d-flex align-items-center justify-content-between">
+                <div className="d-flex align-items-center justify-content-between">
                   <h2>Accenture</h2>
                   <span>
                     <a className="website-link" href="">
@@ -65,7 +65,7 @@ const CompanyProfile = () => {
 
             <div className="card">
               <h3>Technology</h3>
-              <div class="t-badges">
+              <div className="t-badges">
                 <a href="#">Salesforce</a>
                 <a href="#">SharePoint</a>
                 <a href="#">Mailchimp</a>
@@ -82,7 +82,7 @@ const CompanyProfile = () => {
 
             <div className="card">
               <h3>Accenture Services</h3>
-              <div class="t-badges">
+              <div className="t-badges">
                 <a href="#">Mobile App Development</a>
                 <a href="#">Business Consulting</a>
                 <a href="#">Video Consulting</a>
