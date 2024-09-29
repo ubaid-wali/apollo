@@ -14,99 +14,56 @@ import kristin2 from "../img/p-imgs/kristin-2.png";
 import jacob2 from "../img/p-imgs/jacob-2.png";
 import cody2 from "../img/p-imgs/cody-2.png";
 import { Link } from "react-router-dom";
-
-const peopleData = [
-  {
-    logo: brooklyn,
-    name: "Brooklyn Simmons",
-    desc: "Chair & C.E.O",
-    company: "Amazaon",
-    linkedin: "in/brooklyns",
-    industry: "E-Commerce",
-    location: "Brazil/São Paulo",
-    date: "21/12/2022",
-    link: "/professional-profile",
-  },
-  {
-    logo: kristin,
-    name: "Kristin Watson",
-    desc: "C.T.O",
-    company: "Ebay",
-    linkedin: "in/kristinw",
-    industry: "E-Commerce",
-    location: "Washington",
-    date: "21/12/2022",
-    link: "/professional-profile",
-  },
-  {
-    logo: jacob,
-    name: "Jacob Jones",
-    desc: "Director",
-    company: "Accenture",
-    linkedin: "in/jacbj",
-    industry: "Technology",
-    location: "California",
-    date: "21/12/2022",
-    link: "/professional-profile",
-  },
-  {
-    logo: cody,
-    name: "Cody Fisher",
-    desc: "Executive",
-    company: "Freelancer",
-    linkedin: "in/codyf",
-    industry: "Contractors",
-    location: "Germany",
-    date: "21/12/2022",
-    link: "/professional-profile",
-  },
-  {
-    logo: brooklyn2,
-    name: "Brooklyn Simmons",
-    desc: "Manager",
-    company: "Upwork",
-    linkedin: "in/brooklyns",
-    industry: "Contractors",
-    location: "Germany",
-    date: "21/12/2022",
-    link: "/professional-profile",
-  },
-  {
-    logo: kristin2,
-    name: "Kristin Watson",
-    desc: "Specialists",
-    company: "99design",
-    linkedin: "in/kristinw",
-    industry: "Contractors",
-    location: "San Francisco",
-    date: "21/12/2022",
-    link: "/professional-profile",
-  },
-  {
-    logo: jacob2,
-    name: "Jacob Jones",
-    desc: "Creative Director",
-    company: "Fiver",
-    linkedin: "in/jacbj",
-    industry: "Contractors",
-    location: "San Francisco",
-    date: "21/12/2022",
-    link: "/professional-profile",
-  },
-  {
-    logo: cody2,
-    name: "Cody Fisher",
-    desc: "Full Slack Developer",
-    company: "Freepik",
-    linkedin: "in/codyf",
-    industry: "Contractors",
-    location: "San Francisco",
-    date: "21/12/2022",
-    link: "/professional-profile",
-  },
-];
+import { useEffect, useState } from "react";
+import axios from "axios";
+const makePostRequest = async (url) => {
+  try {
+    const response = await axios.get(url);
+    return response.data; // Return the data from the response
+  } catch (error) {
+    console.error("Error making POST request", error);
+    throw error;
+  }
+};
 
 const ProfessionalsListing = () => {
+  // State to store API data
+  const [peopleData, setPropleData] = useState(null);
+
+  // State to handle loading state
+  const [loading, setLoading] = useState(true);
+
+  // State to handle errors
+  const [error, setError] = useState(null);
+
+  // Fetch data on component mount using axios
+  // const apiUrl = "http://34.169.65.115:5000/api/v1/companies";
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const url = "http://34.169.65.115:5000/api/v1/profiles";
+      // const data = { thread_id: thread_id }; // Replace with actual data to send
+
+      try {
+        const response = await makePostRequest(url);
+        setLoading(false);
+        setPropleData(response); // Set the initial data from the response
+      } catch (error) {
+        console.error("Error fetching initial data", error);
+      }
+    };
+    fetchData();
+  }, []); // Empty array ensures the effect runs only on page load
+  // Show loading message while fetching data
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  // Show error message if there was an error
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return (
     <div className="container-fluid">
       <div className="row">
@@ -126,26 +83,39 @@ const ProfessionalsListing = () => {
                 </tr>
               </thead>
               <tbody className="">
-                {peopleData.map((company, index) => (
+                {peopleData.slice(0, 1).map((people, index) => (
                   <tr key={index}>
                     <td>
                       <div className="img-box">
-                        <img src={company.logo} alt="" />
+                        <img
+                          src={
+                            people.profiles[0].profile_details.profile_pic_url
+                          }
+                          alt=""
+                        />
                       </div>
                     </td>
                     <td>
                       <div>
-                        {company.name}
-                        <p className="c-detail"> {company.desc}</p>
+                        {people.profiles[0].profile_details.name}
+                        <p className="c-detail"> {people.position}</p>
                       </div>
                     </td>
-                    <td>{company.company}</td>
-                    <td>{company.linkedin}</td>
-                    <td>{company.industry}</td>
-                    <td>{company.location}</td>
-                    <td>{company.date}</td>
                     <td>
-                      <Link to={company.link} className="arrow-box">
+                      {people.profiles[0].profile_details.current_company}
+                    </td>
+                    <td>{people.profiles[0].profile_url}</td>
+                    <td>{people.industry}</td>
+                    <td>{"industry"}</td>
+                    <td>{people.last_updated}</td>
+                    <td>
+                      <Link
+                        to={
+                          "/professional-profile/?people_id=" +
+                          people._id["$oid"]
+                        }
+                        className="arrow-box"
+                      >
                         <FontAwesomeIcon icon={faArrowRightLong} />
                       </Link>
                     </td>

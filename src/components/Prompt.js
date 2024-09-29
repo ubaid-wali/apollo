@@ -11,7 +11,7 @@ import loggedInUser from "../img/logged-in-user.png";
 import { useEffect, useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import axios from "axios";
-import { useLocation, useSearchParams } from "react-router-dom";
+import { useLocation, useParams, useSearchParams } from "react-router-dom";
 
 const employeeList = [
   {
@@ -79,6 +79,10 @@ const CompanyList = [
   },
 ];
 
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
+
 // Reusable function to make POST requests
 const makePostRequest = async (url, data) => {
   try {
@@ -111,28 +115,41 @@ const Prompt = () => {
   const [typeName, setTypeName] = useState("");
   const [isType, setIsType] = useState(false);
   const [threadData, setThreadData] = useState([]);
+  // const [threatID, setThreadID] = useState([]);
   const [newPromptResponse, setNewPromptResponse] = useState("");
+
+  // const { thread_id } = useParams();
 
   // POST request on page load
 
-  const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const thread_id = queryParams.get("thread_id");
-  // setThreadId(thread_id);
+  // const location = useLocation();
+  // const queryParams = new URLSearchParams(location.search);
+  // const thread_id = queryParams.get("thread_id");
+  const location = useLocation(); // Tracks the URL change
+  const query = useQuery(); // Extracts the query parameters
+  const thread_id = query.get("thread_id"); // Gets the 'id' query parameter
+  // setThreadID(thread_id);
+
+  // console.log(thread_id);
+
   const fetchData = async () => {
+    setLoading(true);
     const url = "http://35.225.202.65:5001/locate_thread";
     const data = { thread_id: thread_id }; // Replace with actual data to send
 
     try {
       const response = await makePostRequest(url, data);
+      setLoading(false);
       setThreadData(response); // Set the initial data from the response
     } catch (error) {
       console.error("Error fetching initial data", error);
     }
   };
   useEffect(() => {
-    fetchData();
-  }, []); // Empty array ensures the effect runs only on page load
+    if (thread_id) {
+      fetchData();
+    }
+  }, [location, thread_id]); // Empty array ensures the effect runs only on page load
 
   console.log(threadData);
 
@@ -158,6 +175,8 @@ const Prompt = () => {
   };
 
   const handleSubmit = async (event) => {
+    setLoading(true);
+    setSearch("");
     event.preventDefault();
     alert(search);
     // promptSearch(true);
@@ -220,6 +239,15 @@ const Prompt = () => {
   // getThreadData();
 
   // console.log(response);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  // Show error message if there was an error
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div className="prompt">

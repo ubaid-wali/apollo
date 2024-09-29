@@ -15,78 +15,18 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const companyData = [
-  {
-    logo: accentureIcon,
-    name: "Accenture",
-    desc: "Let there be change",
-    industry: "IT",
-    revenue: "2.8M",
-    employees: "700,000+",
-    location: "Brazil/São Paulo",
-    technology: "Accounting , IT Much More...",
-    link: "/company-profile",
-  },
-  {
-    logo: amz,
-    name: "Amazon",
-    desc: "Let there be change",
-    industry: "E-Commerce",
-    revenue: "148B",
-    employees: "1,608,000",
-    location: "Washington",
-    technology: "Accounting , IT Much More...",
-    link: "/company-profile",
-  },
-  {
-    logo: ebay,
-    name: "Ebay",
-    desc: "Let there be change",
-    industry: "E-Commerce",
-    revenue: "10.19B",
-    employees: "12,300",
-    location: "California",
-    technology: "Accounting , IT Much More...",
-    link: "/company-profile",
-  },
-  {
-    logo: adidas,
-    name: "Adidas",
-    desc: "Let there be change",
-    industry: "Textile",
-    revenue: "10.19B",
-    employees: "100,000+",
-    location: "Germany",
-    technology: "Accounting , IT Much More...",
-    link: "/company-profile",
-  },
-  {
-    logo: nivea,
-    name: "Nivea",
-    desc: "Let there be change",
-    industry: "Product",
-    revenue: "10.19B",
-    employees: "100,000+",
-    location: "Germany",
-    technology: "Accounting , IT Much More...",
-    link: "/company-profile",
-  },
-  {
-    logo: upwork,
-    name: "Upwork",
-    desc: "Let there be change",
-    industry: "Marketplace",
-    revenue: "10.19B",
-    employees: "100,000+",
-    location: "San Francisco",
-    technology: "Accounting , IT Much More...",
-    link: "/company-profile",
-  },
-];
-
+const makePostRequest = async (url) => {
+  try {
+    const response = await axios.get(url);
+    return response.data; // Return the data from the response
+  } catch (error) {
+    console.error("Error making POST request", error);
+    throw error;
+  }
+};
 const CompanyListing = () => {
   // State to store API data
-  const [data, setData] = useState(null);
+  const [companies, setCompanies] = useState(null);
 
   // State to handle loading state
   const [loading, setLoading] = useState(true);
@@ -94,28 +34,24 @@ const CompanyListing = () => {
   // State to handle errors
   const [error, setError] = useState(null);
 
-  const headers = {
-    "allow-origin": "*",
-  };
-
   // Fetch data on component mount using axios
-  const apiUrl = "http://34.169.65.115:5000/api/v1/profiles";
-  useEffect(() => {
-    // Axios request
-    axios
-      .get(apiUrl, {
-        headers,
-      })
-      .then((response) => {
-        setData(response); // Set fetched data to state
-        setLoading(false); // Set loading to false
-      })
-      .catch((error) => {
-        setError(error.message); // Handle any error
-        setLoading(false);
-      });
-  }, []); // Empty dependency array ensures this runs only on mount
+  // const apiUrl = "http://34.169.65.115:5000/api/v1/companies";
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const url = "http://34.169.65.115:5000/api/v1/companies";
+      // const data = { thread_id: thread_id }; // Replace with actual data to send
+
+      try {
+        const response = await makePostRequest(url);
+        setLoading(false);
+        setCompanies(response); // Set the initial data from the response
+      } catch (error) {
+        console.error("Error fetching initial data", error);
+      }
+    };
+    fetchData();
+  }, []); // Empty array ensures the effect runs only on page load
   // Show loading message while fetching data
   if (loading) {
     return <div>Loading...</div>;
@@ -134,10 +70,12 @@ const CompanyListing = () => {
             <table className="table align-middle">
               <thead>
                 <tr>
-                  <th scope="col"></th>
+                  <th scope="col">Logo</th>
                   <th scope="col">Company Name</th>
                   <th scope="col">Industry </th>
-                  <th scope="col">Annual Revenue</th>
+                  <th scope="col" className="text-nowrap">
+                    Annual Revenue
+                  </th>
                   <th scope="col">Employees</th>
                   <th scope="col">Location</th>
                   <th scope="col">Technologies</th>
@@ -145,11 +83,11 @@ const CompanyListing = () => {
                 </tr>
               </thead>
               <tbody className="">
-                {companyData.map((company, index) => (
+                {companies.slice(0, 19).map((company, index) => (
                   <tr key={index}>
                     <td>
                       <div className="img-box">
-                        <img src={company.logo} alt="" />
+                        <img src={company.logo_url} alt="" />
                       </div>
                     </td>
                     <td>
@@ -159,12 +97,34 @@ const CompanyListing = () => {
                       </div>
                     </td>
                     <td>{company.industry}</td>
-                    <td>{company.revenue}</td>
+                    <td>{company.annual_revenue}</td>
                     <td>{company.employees}</td>
-                    <td>{company.technology}</td>
                     <td>{company.location}</td>
                     <td>
-                      <Link to={company.link} className="arrow-box">
+                      {company.technology_used.current_technologies
+                        .slice(0, 2)
+                        .map((tech, idx) => (
+                          <span key={idx}>
+                            {tech.name} ({tech.category})
+                            {idx <
+                            company.technology_used.current_technologies.slice(
+                              0,
+                              2
+                            ).length -
+                              1
+                              ? ", "
+                              : " Much More..."}
+                          </span>
+                        ))}
+                    </td>
+                    <td>
+                      <Link
+                        to={
+                          "/company-profile/?company_id=" +
+                          company._id["$oid"]
+                        }
+                        className="arrow-box"
+                      >
                         <FontAwesomeIcon icon={faArrowRightLong} />
                       </Link>
                     </td>
@@ -227,7 +187,7 @@ const CompanyListing = () => {
             </div>
           </div>
         </div>
-        <div className="col-md-12">{JSON.stringify(data, null, 2)}</div>
+        {/* <div className="col-md-12">{JSON.stringify(companies, null, 2)}</div> */}
       </div>
     </div>
   );

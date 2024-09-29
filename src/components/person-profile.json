@@ -1,0 +1,316 @@
+66ea6e640a64ffc0e7734e43{
+  "_id": {
+    "$oid": "66ea6e640a64ffc0e7734e43"
+  },
+  "analysis": {
+    "disc_analysis": [
+      {
+        "disc_analysis": "Here is a DISC assessment-based personality analysis for Paul Ford:\nDominance (D): Paul Ford demonstrates a moderate to high level of dominance. As a Director of Information Security, he has taken the lead in deploying and managing advanced security systems at Inovalon. His ability to build the Security Operations Center from scratch and implement Zero Trust Architecture highlights his decisive, results-oriented approach. He takes charge in high-pressure situations, making critical decisions to enhance the company\u2019s security infrastructure.\nInfluence (I): While Paul's role demands interaction with teams and stakeholders, his profile suggests that influence is moderate. His primary focus is on leadership through expertise and technical skills rather than social engagement. His commitment to aligning security measures with corporate objectives and customer service indicates that he can effectively influence others when necessary, but it is not his dominant trait.\nSteadiness (S): Paul exhibits a high level of steadiness, which is evident in his consistent career progression and long-term focus on security. His methodical approach to integrating frameworks such as HITRUST and NIST shows that he values stability, security, and dependability. His leadership style likely promotes a calm, structured environment, which is essential for managing complex security operations.\nConscientiousness (C): Paul's profile reflects a very high level of conscientiousness. His focus on compliance (SOC II, PCI-DSS) and the meticulous deployment of security technologies (Crowdstrike, Rapid7) highlights his attention to detail and precision. He places significant importance on following standards and protocols, ensuring the organization meets stringent security and regulatory requirements.\nIn summary, Paul Ford's personality leans towards high conscientiousness and steadiness, with a strong capacity for dominance in leadership roles, and moderate influence, making him a meticulous and dependable leader in the field of information security.",
+        "profile_url": "https://www.linkedin.com/in/paul-ford-8410077",
+        "prompt": "Please analyze the information in the source file and provide a concise summary of paul_ford_8410077 personality based on the DISC assessment framework:Ensure the response is clear, concise, and professional, summarizing each aspect within 1500 characters."
+      },
+      {
+        "disc_analysis": "Here is a DISC assessment-based personality analysis for Paul Ford:\nDominance (D): Paul Ford demonstrates a moderate to high level of dominance. As a Director of Information Security, he has taken the lead in deploying and managing advanced security systems at Inovalon. His ability to build the Security Operations Center from scratch and implement Zero Trust Architecture highlights his decisive, results-oriented approach. He takes charge in high-pressure situations, making critical decisions to enhance the company\u2019s security infrastructure.\nInfluence (I): While Paul's role demands interaction with teams and stakeholders, his profile suggests that influence is moderate. His primary focus is on leadership through expertise and technical skills rather than social engagement. His commitment to aligning security measures with corporate objectives and customer service indicates that he can effectively influence others when necessary, but it is not his dominant trait.\nSteadiness (S): Paul exhibits a high level of steadiness, which is evident in his consistent career progression and long-term focus on security. His methodical approach to integrating frameworks such as HITRUST and NIST shows that he values stability, security, and dependability. His leadership style likely promotes a calm, structured environment, which is essential for managing complex security operations.\nConscientiousness (C): Paul's profile reflects a very high level of conscientiousness. His focus on compliance (SOC II, PCI-DSS) and the meticulous deployment of security technologies (Crowdstrike, Rapid7) highlights his attention to detail and precision. He places significant importance on following standards and protocols, ensuring the organization meets stringent security and regulatory requirements.\nIn summary, Paul Ford's personality leans towards high conscientiousness and steadiness, with a strong capacity for dominance in leadership roles, and moderate influence, making him a meticulous and dependable leader in the field of information security.",
+        "profile_url": "https://www.linkedin.com/in/charles-petraske-mba-672b5a4",
+        "prompt": "Please analyze the information in the source file and provide a concise summary of charles_petraske_mba_672b5a4 personality based on the DISC assessment framework:Ensure the response is clear, concise, and professional, summarizing each aspect within 1500 characters."
+      },
+      {
+        "disc_analysis": "DISC Personality Summary for Charles Petraske, MBA:\nDominance (D): Charles demonstrates a moderate level of dominance. As a seasoned sales professional, he excels in leadership roles, including his time as Senior VP and Area Vice President at Inovalon and GlobalData. His ability to manage multiple accounts and exceed sales goals shows that he is assertive and results-driven but also adaptable to the demands of a changing business environment.\nInfluence (I): Charles has a high degree of influence, which is critical in his sales roles. His success in relationship-building and client satisfaction shows his ability to persuade and build trust. His communication skills and interpersonal effectiveness help him maintain long-term client relationships, which is vital in his business-to-business and medical device sales roles.\nSteadiness (S): Charles displays moderate steadiness. His long tenure across various organizations in the medical and pharmaceutical sectors shows he values stability and is comfortable managing both predictable and dynamic environments. His adaptability in handling multiple roles and client needs demonstrates flexibility, but he remains consistent in his goal to provide excellent customer service.\nConscientiousness (C): Charles exhibits high conscientiousness, as evidenced by his strong adherence to corporate guidelines, policies, and his ability to manage complex sales strategies. His focus on customer satisfaction and solution-based selling highlights a detail-oriented and disciplined approach, ensuring that client needs are thoroughly assessed and met.\nDISC Personality Summary for Jonathan Brown:\nDominance (D): Jonathan demonstrates a high level of dominance. His extensive experience in business development and managing high-value sales deals indicates his comfort with taking charge and leading projects to completion. His consistent track record in achieving sales quotas suggests a competitive, results-oriented approach.\nInfluence (I): Jonathan has high influence, which is critical in his customer-facing roles. His focus on building and maintaining long-term relationships with clients shows strong persuasive abilities and social engagement. His success in sales and business development relies heavily on his ability to communicate effectively and inspire confidence in his clients.\nSteadiness (S): Jonathan shows moderate steadiness. While his career is characterized by dynamic roles in sales, his ability to consistently perform and manage complex projects demonstrates a calm and methodical approach to handling responsibilities. His adaptability ensures he can manage both high-pressure environments and stable operations.\nConscientiousness (C): Jonathan displays a high level of conscientiousness, as evidenced by his disciplined approach to achieving sales goals and managing accounts. His ability to consistently exceed expectations suggests attention to detail and a strong commitment to delivering quality results for his clients and stakeholders.\nBoth Charles and Jonathan demonstrate strong leadership and sales skills, but Charles focuses more on relationship-building and conscientiousness, while Jonathan emphasizes dominance and influence in driving business success.",
+        "profile_url": "https://www.linkedin.com/in/jonathan-brown-631a2b2",
+        "prompt": "Please analyze the information in the source file and provide a concise summary of jonathan_brown_631a2b2 personality based on the DISC assessment framework:Ensure the response is clear, concise, and professional, summarizing each aspect within 1500 characters."
+      }
+    ],
+    "persona_analyis": [
+      {
+        "persona_analysis": "Here's a concise OCEAN (Big Five Personality Traits) analysis of Paul Ford based on the available information:\nOpenness to Experience: Paul Ford demonstrates a moderate level of openness. His willingness to innovate through advanced security implementations (e.g., deploying cloud security solutions like Crowdstrike and Rapid7) suggests he is open to new ideas and technologies, but his focus on structured frameworks (e.g., HITRUST) indicates a preference for established methods.\nConscientiousness: Ford exhibits high conscientiousness, as evidenced by his meticulous approach to security, his leadership in establishing a Security Operations Center, and his role in vulnerability management and Zero Trust Architecture implementation. His career reflects a focus on organization, responsibility, and discipline.\nExtraversion: His leadership roles and customer service focus imply a degree of extraversion. Ford is likely comfortable in leadership positions and enjoys interacting with teams and stakeholders to align security measures with corporate objectives.\nAgreeableness: Ford\u2019s emphasis on customer service and teamwork suggests he values collaboration and helping others. His leadership style seems to balance authority with support, fostering an environment of trust and innovation.\nNeuroticism: The professional focus on risk management, security threats, and resilience suggests a low level of neuroticism. Ford appears to handle stress well, with a calm and systematic approach to problem-solving.\nOverall, Paul Ford\u2019s profile highlights a disciplined, innovative, and team-oriented leader with a strong focus on security and resilience.",
+        "profile_url": "https://www.linkedin.com/in/paul-ford-8410077",
+        "prompt": "Please analyze the information in the source file and provide a concise summary of paul_ford_8410077 based on the OCEAN framework:Ensure the response is clear, concise, and professional, summarizing each aspect within 1000 characters."
+      },
+      {
+        "persona_analysis": "Here is a concise OCEAN analysis of Charles Petraske, MBA, based on the information provided:\nOpenness to Experience: Charles demonstrates moderate openness, as seen in his ability to adapt to different roles in sales, business development, and management across various sectors like pharmaceuticals, diagnostics, and healthcare. He appears to value learning, as evidenced by his pursuit of a healthcare analytics MS degree.\nConscientiousness: Charles exhibits high conscientiousness. His long tenure in sales, ability to manage numerous accounts, and adherence to corporate policies suggest a detail-oriented, disciplined, and goal-driven personality.\nExtraversion: His career in sales and business development points to high extraversion. Charles likely thrives on interaction, building relationships, and working collaboratively with teams, which is essential for his success in client-focused roles.\nAgreeableness: Charles values relationship-building, rapport with clients, and customer satisfaction, suggesting he is approachable and cooperative in both team settings and customer relations.\nNeuroticism: His extensive experience handling high-pressure sales and leadership roles points to low neuroticism. Charles likely handles stress well, maintaining calm under pressure and consistently delivering results.\nOverall, Charles Petraske is a highly conscientious, outgoing, and adaptable sales professional with strong interpersonal skills.",
+        "profile_url": "https://www.linkedin.com/in/charles-petraske-mba-672b5a4",
+        "prompt": "Please analyze the information in the source file and provide a concise summary of charles_petraske_mba_672b5a4 based on the OCEAN framework:Ensure the response is clear, concise, and professional, summarizing each aspect within 1000 characters."
+      },
+      {
+        "persona_analysis": "Here is a concise OCEAN analysis of Jonathan Brown, based on the provided information:\nOpenness to Experience: Jonathan shows moderate openness. His extensive experience across various companies, industries, and roles suggests a willingness to embrace change and new challenges. His work with innovative technology solutions, like SaaS and CRM, demonstrates adaptability to modern business environments.\nConscientiousness: Jonathan exhibits high conscientiousness. His consistent track record of achieving and exceeding sales quotas, along with his ability to manage multi-million-dollar deals, reflects strong discipline, reliability, and a goal-oriented mindset.\nExtraversion: With over 20 years of experience in business development and sales, Jonathan displays high extraversion. His customer-facing roles, ability to build strong relationships, and leadership in sales teams highlight his comfort with social interaction and leadership.\nAgreeableness: Jonathan demonstrates agreeableness through his customer-focused approach and teamwork. His ability to build long-term relationships with clients and colleagues indicates a cooperative and approachable nature.\nNeuroticism: Jonathan appears to have low neuroticism. His ability to handle high-pressure sales roles and consistently deliver results suggests that he manages stress well and maintains emotional stability.\nOverall, Jonathan is a highly conscientious, adaptable, and outgoing professional with a strong focus on achieving results and fostering positive relationships.",
+        "profile_url": "https://www.linkedin.com/in/jonathan-brown-631a2b2",
+        "prompt": "Please analyze the information in the source file and provide a concise summary of jonathan_brown_631a2b2 based on the OCEAN framework:Ensure the response is clear, concise, and professional, summarizing each aspect within 1000 characters."
+      }
+    ]
+  },
+  "company_id": "123456",
+  "last_updated": "2024-09-18 08:20:54.698629",
+  "profiles": [
+    {
+      "company_id": "123456",
+      "last_updated": "2024-09-18T08:17:28.477349",
+      "profile_details": {
+        "current_company": "Inovalon",
+        "education": [
+          {
+            "degree": "Master's degree, Information Technology\nMaster's degree, Information Technology",
+            "school": "Towson University",
+            "years": "2005 - 2006\n2005 - 2006"
+          },
+          {
+            "degree": "2000 - 2004\n2000 - 2004",
+            "school": "Salisbury University",
+            "years": "2000 - 2004\n2000 - 2004"
+          }
+        ],
+        "email": null,
+        "experience": [
+          {
+            "company": "7 yrs\n7 yrs",
+            "duration": "Sep 2019 - Present \u00b7 5 yrs 1 mo",
+            "location": "Bowie, MD\nBowie, MD",
+            "title": "Inovalon"
+          },
+          {
+            "company": "Credible Behavioral Health Software\nCredible Behavioral Health Software",
+            "duration": "Jun 2016 - Sep 2017 \u00b7 1 yr 4 mos",
+            "location": "Rockville, MD\nRockville, MD",
+            "title": "IT Manager"
+          },
+          {
+            "company": "Inovalon\nInovalon",
+            "duration": "Oct 2013 - Jun 2016 \u00b7 2 yrs 9 mos",
+            "location": "Bowie, MD\nBowie, MD",
+            "title": "IT Manager"
+          },
+          {
+            "company": "US Navy\nUS Navy",
+            "duration": "Mar 2005 - Oct 2013 \u00b7 8 yrs 8 mos",
+            "location": null,
+            "title": "IT Specialist"
+          }
+        ],
+        "languages_details": null,
+        "location": "Washington, District of Columbia, United States",
+        "name": "Paul Ford",
+        "phone_number": null,
+        "position": "Director Information Security | Security+",
+        "profile_pic_url": "https://media.licdn.com/dms/image/v2/C5603AQEdU5TEdrR0sw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516302493605?e=1732147200&v=beta&t=907LGssnuIV9ij1PDoT2tzo_3crhALnUVrw3YndQcG4",
+        "social_media_links": {
+          "linkedin": {
+            "connections": "500+",
+            "profile_url": "https://www.linkedin.com/in/paul-ford-8410077"
+          }
+        }
+      },
+      "profile_url": "https://www.linkedin.com/in/paul-ford-8410077"
+    },
+    {
+      "company_id": "123456",
+      "last_updated": "2024-09-18T08:18:35.394782",
+      "profile_details": {
+        "current_company": "Inovalon",
+        "education": [
+          {
+            "degree": "MS- Healthcare Analytics, Medicine\nMS- Healthcare Analytics, Medicine",
+            "school": "Clarkson University",
+            "years": "2021 - 2025\n2021 - 2025"
+          },
+          {
+            "degree": "M.B.A., Management / Marketing\nM.B.A., Management / Marketing",
+            "school": "C.W. Post Long Island University",
+            "years": "2003 - 2005\n2003 - 2005"
+          },
+          {
+            "degree": "B.S, Business Administration\nB.S, Business Administration",
+            "school": "State University of New York at Plattsburgh",
+            "years": "1998 - 2000\n1998 - 2000"
+          },
+          {
+            "degree": "A.A.S, Business Administration\nA.A.S, Business Administration",
+            "school": "Hudson Valley Community College",
+            "years": "1995 - 1998\n1995 - 1998"
+          }
+        ],
+        "email": null,
+        "experience": [
+          {
+            "company": "Inovalon \u00b7 Full-time\nInovalon \u00b7 Full-time",
+            "duration": "Jan 2024 - Present \u00b7 9 mos",
+            "location": "United States \u00b7 Remote\nUnited States \u00b7 Remote",
+            "title": "Area Vice President of Sales"
+          },
+          {
+            "company": "GlobalData Plc \u00b7 Full-time\nGlobalData Plc \u00b7 Full-time",
+            "duration": "Oct 2021 - Sep 2022 \u00b7 1 yr",
+            "location": "London, England, United Kingdom\nLondon, England, United Kingdom",
+            "title": "Senior VP - Custom Data Analytics- Healthcare"
+          },
+          {
+            "company": "IQVIA \u00b7 Full-time\nIQVIA \u00b7 Full-time",
+            "duration": "Aug 2020 - Oct 2021 \u00b7 1 yr 3 mos",
+            "location": "Waltham, Massachusetts, United States\nWaltham, Massachusetts, United States",
+            "title": "Solution Sales Specialist "
+          },
+          {
+            "company": "Quidel \u00b7 Full-time\nQuidel \u00b7 Full-time",
+            "duration": "Jun 2019 - Mar 2020 \u00b7 10 mos",
+            "location": "New York, United States\nNew York, United States",
+            "title": "Senior Sales Account Manager "
+          },
+          {
+            "company": "Fuji Film - Wako Diagnostics \u00b7 Full-time\nFuji Film - Wako Diagnostics \u00b7 Full-time",
+            "duration": "Sep 2011 - Jan 2019 \u00b7 7 yrs 5 mos",
+            "location": "North America\nNorth America",
+            "title": "Manager-Business Development In-Vitro Diagnostics; OEM Manager"
+          },
+          {
+            "company": "Roche Diagnostics\nRoche Diagnostics",
+            "duration": "Oct 2005 - Sep 2011 \u00b7 6 yrs",
+            "location": "Northeast US\nNortheast US",
+            "title": "Sales Account Manager - Near Patient Testing"
+          },
+          {
+            "company": "Novartis Pharmaceuticals\nNovartis Pharmaceuticals",
+            "duration": "Aug 2001 - Oct 2005 \u00b7 4 yrs 3 mos",
+            "location": "NY, Long Island and NYC\nNY, Long Island and NYC",
+            "title": "Sales Consultant"
+          },
+          {
+            "company": "Pitney Bowes MapInfo\nPitney Bowes MapInfo",
+            "duration": "Mar 2001 - Apr 2002 \u00b7 1 yr 2 mos",
+            "location": null,
+            "title": "Sales Representative"
+          },
+          {
+            "company": "Nutro Products\nNutro Products",
+            "duration": "Aug 1995 - Aug 2000 \u00b7 5 yrs 1 mo",
+            "location": null,
+            "title": "Sales Account Manager"
+          }
+        ],
+        "languages_details": [
+          {
+            "language_name": "English",
+            "proficiency": "Native or bilingual proficiency"
+          },
+          {
+            "language_name": "Hungarian",
+            "proficiency": "Limited working proficiency"
+          },
+          {
+            "language_name": "Polish",
+            "proficiency": "Professional working proficiency"
+          },
+          {
+            "language_name": "Spanish",
+            "proficiency": "Limited working proficiency"
+          }
+        ],
+        "location": "Ballston Lake, New York, United States",
+        "name": "Charles Petraske, MBA",
+        "phone_number": null,
+        "position": "Sales Director - Custom Data - Pharmaceutical / Medical",
+        "profile_pic_url": "https://media.licdn.com/dms/image/v2/C4D03AQGiBJ6FUSXPWg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1646415410984?e=1732147200&v=beta&t=e-FBxmeOkXhoVP3SYQu4ckxTMyK1l55rBC3znlIdsB0",
+        "social_media_links": {
+          "linkedin": {
+            "connections": "500+",
+            "profile_url": "https://www.linkedin.com/in/charles-petraske-mba-672b5a4"
+          }
+        }
+      },
+      "profile_url": "https://www.linkedin.com/in/charles-petraske-mba-672b5a4"
+    },
+    {
+      "company_id": "123456",
+      "last_updated": "2024-09-18T08:20:54.458176",
+      "profile_details": {
+        "current_company": "Inovalon",
+        "education": [
+          {
+            "degree": "BS, Computer Engineering\nBS, Computer Engineering",
+            "school": "The University of Toledo",
+            "years": "1998 - 2003\n1998 - 2003"
+          }
+        ],
+        "email": null,
+        "experience": [
+          {
+            "company": "Inovalon \u00b7 Full-time\nInovalon \u00b7 Full-time",
+            "duration": "Feb 2024 - Present \u00b7 8 mos",
+            "location": "New York, New York, United States \u00b7 Remote\nNew York, New York, United States \u00b7 Remote",
+            "title": "Business Development Director"
+          },
+          {
+            "company": "IPwe \u00b7 Full-time\nIPwe \u00b7 Full-time",
+            "duration": "Apr 2023 - Dec 2023 \u00b7 9 mos",
+            "location": "New York, New York, United States \u00b7 Remote\nNew York, New York, United States \u00b7 Remote",
+            "title": "Chief Revenue Officer (CRO)"
+          },
+          {
+            "company": "Salesforce \u00b7 Full-time\nSalesforce \u00b7 Full-time",
+            "duration": "Jan 2018 - Apr 2023 \u00b7 5 yrs 4 mos",
+            "location": "Greater New York City Area\nGreater New York City Area",
+            "title": "Key Account Director"
+          },
+          {
+            "company": "Oracle",
+            "duration": "Jun 2017 - Jan 2018 \u00b7 8 mos",
+            "location": "Greater New York City Area\nGreater New York City Area",
+            "title": "Emerging BioPharma eClinical Sales"
+          },
+          {
+            "company": "Oracle",
+            "duration": "Sep 2014 - Jun 2017 \u00b7 2 yrs 10 mos",
+            "location": "Greater New York City Area\nGreater New York City Area",
+            "title": "Regional Sales Manager"
+          },
+          {
+            "company": "Oracle",
+            "duration": "Aug 2012 - Sep 2014 \u00b7 2 yrs 2 mos",
+            "location": "Greater New York City Area\nGreater New York City Area",
+            "title": "Sr. Federal Account Manager for VA, DOL, LOC, Education, OPM, and NARA"
+          },
+          {
+            "company": "TARGUSinfo\nTARGUSinfo",
+            "duration": "Oct 2010 - Aug 2012 \u00b7 1 yr 11 mos",
+            "location": null,
+            "title": "Account Executive"
+          },
+          {
+            "company": "DAXKO\nDAXKO",
+            "duration": "Aug 2009 - Sep 2010 \u00b7 1 yr 2 mos",
+            "location": null,
+            "title": "Account Executive"
+          },
+          {
+            "company": "Avectra\nAvectra",
+            "duration": "Nov 2005 - Aug 2009 \u00b7 3 yrs 10 mos",
+            "location": null,
+            "title": "Sales Account Manager"
+          },
+          {
+            "company": "NetworkD Corp\nNetworkD Corp",
+            "duration": "Apr 2005 - Nov 2005 \u00b7 8 mos",
+            "location": null,
+            "title": "Inside Sales Manager"
+          },
+          {
+            "company": "DLT Solutions, Inc\nDLT Solutions, Inc",
+            "duration": "Nov 2003 - Apr 2005 \u00b7 1 yr 6 mos",
+            "location": null,
+            "title": "Senior Government Account Representative"
+          }
+        ],
+        "languages_details": null,
+        "location": "New York, New York, United States",
+        "name": "Jonathan Brown",
+        "phone_number": null,
+        "position": "Business Development Director @ Inovalon",
+        "profile_pic_url": "https://media.licdn.com/dms/image/v2/C4E03AQGKt_9CPgTFxA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1529955097184?e=1732147200&v=beta&t=BdNbjJWtJvihp51alvp6FiPHH1LZpA1P6c1acc_fxz4",
+        "social_media_links": {
+          "linkedin": {
+            "connections": "500+",
+            "profile_url": "https://www.linkedin.com/in/jonathan-brown-631a2b2"
+          }
+        }
+      },
+      "profile_url": "https://www.linkedin.com/in/jonathan-brown-631a2b2"
+    }
+  ]
+}

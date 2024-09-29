@@ -13,8 +13,63 @@ import { faLocationPin } from "@fortawesome/free-solid-svg-icons/faLocationPin";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
 import jacobJones from "../img/jacob-jones.png";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+
+const makePostRequest = async (url) => {
+  try {
+    const response = await axios.get(url);
+    return response.data; // Return the data from the response
+  } catch (error) {
+    console.error("Error making POST request", error);
+    throw error;
+  }
+};
 
 const ProfessionalProfile = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const profile_id = queryParams.get("people_id");
+
+  // State to store API data
+  const [personData, setPersonData] = useState(null);
+
+  // State to handle loading state
+  const [loading, setLoading] = useState(true);
+
+  // State to handle errors
+  const [error, setError] = useState(null);
+
+  // Fetch data on component mount using axios
+  // const apiUrl = "http://34.169.65.115:5000/api/v1/companies";
+
+  console.log(profile_id);
+  useEffect(() => {
+    const fetchData = async () => {
+      const url = "http://34.169.65.115:5000/api/v1/profiles/" + profile_id;
+      // const data = { company_id: company_id }; // Replace with actual data to send
+
+      try {
+        const response = await makePostRequest(url);
+        setLoading(false);
+        setPersonData(response); // Set the initial data from the response
+      } catch (error) {
+        console.error("Error fetching initial data", error);
+      }
+    };
+    fetchData();
+  }, []); // Empty array ensures the effect runs only on page load
+  // Show loading message while fetching data
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  // Show error message if there was an error
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return (
     <div className="pProfile">
       <div className="container-fluid">
@@ -26,7 +81,7 @@ const ProfessionalProfile = () => {
               </div>
               <div className="content">
                 <div className="d-flex align-items-center justify-content-between">
-                  <h2>Accenture</h2>
+                  {/* <h2>{personData.}</h2> */}
                   <span>
                     <a className="website-link" href="">
                       Visit Website{" "}
@@ -61,7 +116,7 @@ const ProfessionalProfile = () => {
                 </div>
                 <div className="profile-intro d-flex align-items-center justify-content-between">
                   <div>
-                    <h3>Jacob Jones</h3>
+                    <h3>{personData.profile_details.name}</h3>
                     <p className="designation">Senrior Graphics Designer</p>
                     <p className="location">
                       <span>

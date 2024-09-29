@@ -5,8 +5,63 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import accentureImage from "../img/accenture-img.png";
 import justinFranci from "../img/justin-franci.png";
+import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+const makePostRequest = async (url) => {
+  try {
+    const response = await axios.get(url);
+    return response.data; // Return the data from the response
+  } catch (error) {
+    console.error("Error making POST request", error);
+    throw error;
+  }
+};
 
 const CompanyProfile = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const company_id = queryParams.get("company_id");
+
+  // State to store API data
+  const [companyData, setCompanyData] = useState(null);
+
+  // State to handle loading state
+  const [loading, setLoading] = useState(true);
+
+  // State to handle errors
+  const [error, setError] = useState(null);
+
+  // Fetch data on component mount using axios
+  // const apiUrl = "http://34.169.65.115:5000/api/v1/companies";
+
+  console.log(company_id);
+  useEffect(() => {
+    const fetchData = async () => {
+      const url = "http://34.169.65.115:5000/api/v1/companies/" + company_id;
+      // const data = { company_id: company_id }; // Replace with actual data to send
+
+      try {
+        const response = await makePostRequest(url);
+        setLoading(false);
+        setCompanyData(response); // Set the initial data from the response
+      } catch (error) {
+        console.error("Error fetching initial data", error);
+      }
+    };
+    fetchData();
+  }, []); // Empty array ensures the effect runs only on page load
+  // Show loading message while fetching data
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  // Show error message if there was an error
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return (
     <div className="cProfile">
       <div className="container-fluid">
@@ -14,14 +69,17 @@ const CompanyProfile = () => {
           <div className="col-md-12">
             <div className="company-intro d-flex align-items-center justify-content-center">
               <div className="img-box">
-                <img src={accentureImage} alt="" />
+                <img src={companyData.logo_url} alt="" />
               </div>
               <div className="content">
                 <div className="d-flex align-items-center justify-content-between">
-                  <h2>Accenture</h2>
+                  <h2>{companyData.name}</h2>
                   <span>
-                    <a className="website-link" href="">
-                      Visit Website{" "}
+                    <a
+                      className="website-link"
+                      href={companyData["social media"].website_url}
+                    >
+                      Visit Website
                       <FontAwesomeIcon icon={faUpRightFromSquare} />
                     </a>
                   </span>
@@ -66,7 +124,7 @@ const CompanyProfile = () => {
             <div className="card">
               <h3>Technology</h3>
               <div className="t-badges">
-                <a href="#">Salesforce</a>
+                {/* <a href="#">Salesforce</a>
                 <a href="#">SharePoint</a>
                 <a href="#">Mailchimp</a>
                 <a href="#">Linkedin Marketing Solutions</a>
@@ -76,14 +134,22 @@ const CompanyProfile = () => {
                 <a href="#">Adobe Media Optimizer</a>
                 <a href="#">Atlassian Cloud</a>
                 <a href="#">Facebook Custom Audiences</a>
-                <a href="#">Circle</a>
+                <a href="#">Circle</a> */}
+                {companyData.technology_used.current_technologies.map(
+                  (tech, index) => (
+                    <a href="#">{tech.name}</a>
+                  )
+                )}
               </div>
             </div>
 
             <div className="card">
               <h3>Accenture Services</h3>
               <div className="t-badges">
-                <a href="#">Mobile App Development</a>
+                {companyData.keywords.map((keyword, index) => (
+                  <a href="#">{keyword}</a>
+                ))}
+                {/* <a href="#">Mobile App Development</a>
                 <a href="#">Business Consulting</a>
                 <a href="#">Video Consulting</a>
                 <a href="#">IT technology services</a>
@@ -91,14 +157,21 @@ const CompanyProfile = () => {
                 <a href="#">Accounting</a>
                 <a href="#">HR Outsourcing</a>
                 <a href="#">BPO</a>
-                <a href="#">Software Development</a>
+                <a href="#">Software Development</a> */}
               </div>
             </div>
 
             <div className="card">
               <h3>Employees statistics</h3>
-              <div className="stats-box d-flex flex-items-center justify-content-between">
-                <div className="stats">
+              <div className="stats-box d-flex flex-items-center justify-content-between flex-wrap">
+                {companyData.employee_metrics.departments.map((emp, index) => (
+                  <div className="stats">
+                    <h4>{emp.retained}</h4>
+                    <p>{emp.functions}</p>
+                  </div>
+                ))}
+
+                {/* <div className="stats">
                   <h4>6</h4>
                   <p>Manager</p>
                 </div>
@@ -117,12 +190,12 @@ const CompanyProfile = () => {
                 <div className="stats">
                   <h4>4</h4>
                   <p>Specialist</p>
-                </div>
+                </div> */}
               </div>
             </div>
 
             <div className="card">
-              <h3>Employees statistics</h3>
+              <h3>Key Dissection Makers </h3>
               <div className="employee-list">
                 <div className="container-fluid">
                   <div className="row">

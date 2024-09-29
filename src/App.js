@@ -55,6 +55,10 @@ const router = createBrowserRouter([
         path: "/session-progress",
         element: <SessionProgress />,
       },
+      // {
+      //   path: "/company-profile",
+      //   element: <CompanyProfile />,
+      // },
     ],
   },
 ]);
