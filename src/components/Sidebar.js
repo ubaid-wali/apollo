@@ -1,11 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGears } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDoubleRight, faGears } from "@fortawesome/free-solid-svg-icons";
 import companyLogo from "../img/sample-company.png";
-import buttonStars from "../img/button-stars.png";
-import { Link } from "react-router-dom";
+
+import { Link } from "react-router-dom"; 
 import axios from "axios";
 import { useEffect, useState } from "react";
 import PromptSessionsListing from "./PromptSessionsListing";
+import { Button, Modal } from "react-bootstrap";
+import SessionsListing from "./SessionsListing";
 
 const Sidebar = () => {
   const [data, setData] = useState(null);
@@ -15,6 +17,9 @@ const Sidebar = () => {
 
   // State to handle errors
   const [error, setError] = useState(null);
+
+  const [showSessionModal, setShowSessionModal] = useState(false);
+  const handleCloseSessionModal = () => showSessionModal(false);
 
   // Fetch data on component mount using axios
   useEffect(() => {
@@ -50,65 +55,7 @@ const Sidebar = () => {
       <div className="logo">
         <img src={companyLogo} alt="" />
       </div>
-      <div className="session-box">
-        <div className="button-box">
-          <button className="btn btn-dark">
-            Start a Session <img src={buttonStars} alt="" />
-          </button>
-        </div>
-        <div className="previous-sessions">
-          <h6>Session in progress</h6>
-          <ul className="session-list">
-            <li>
-              <span>
-                <Link to="/session-progress">Healthcare sector</Link>
-              </span>
-              <div className="progress-box d-flex justify-content-center align-items-center">
-                <span className="progress-icon">
-                  <FontAwesomeIcon icon={faGears} />
-                </span>
-                <div
-                  className="progress flex-grow-1"
-                  role="progressbar"
-                  aria-label="Success example"
-                  aria-valuenow="6"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  <div
-                    className="progress-bar bg-dark"
-                    style={{ width: "6%" }}
-                  ></div>
-                </div>
-                <span>6%</span>
-              </div>
-            </li>
-            <li>
-              <span>Julia Friedberg</span>
-              <div className="progress-box d-flex justify-content-center align-items-center">
-                <span className="progress-icon">
-                  <FontAwesomeIcon icon={faGears} />
-                </span>
-                <div
-                  className="progress flex-grow-1"
-                  role="progressbar"
-                  aria-label="Success example"
-                  aria-valuenow="73"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  <div
-                    className="progress-bar bg-dark"
-                    style={{ width: "73%" }}
-                  ></div>
-                </div>
-                <span>73%</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-
+      <SessionsListing />
       <PromptSessionsListing />
     </div>
   );

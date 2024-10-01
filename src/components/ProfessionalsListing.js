@@ -69,7 +69,7 @@ const ProfessionalsListing = () => {
       <div className="row">
         <div className="col-md-12">
           <div className="c-listing">
-            <table className="table align-middle">
+            <table className="table align-middle table-responsive">
               <thead>
                 <tr>
                   <th scope="col"></th>
@@ -83,31 +83,51 @@ const ProfessionalsListing = () => {
                 </tr>
               </thead>
               <tbody className="">
-                {peopleData.slice(0, 1).map((people, index) => (
+                {peopleData.map((people, index) => (
                   <tr key={index}>
                     <td>
                       <div className="img-box">
                         <img
                           src={
-                            people.profiles[0].profile_details.profile_pic_url
+                            people["profile_details"]["profile_pic_url"]
+                              ? people["profile_details"]["profile_pic_url"]
+                              : ""
                           }
                           alt=""
                         />
                       </div>
                     </td>
                     <td>
-                      <div>
-                        {people.profiles[0].profile_details.name}
-                        <p className="c-detail"> {people.position}</p>
+                      <div className="text-nowrap">
+                        {people["profile_details"]["name"]
+                          ? people["profile_details"]["name"]
+                          : ""}
+                        <p className="c-detail">
+                          {people["profile_details"]["position"]
+                            ? people["profile_details"]["position"]
+                            : ""}
+                        </p>
                       </div>
                     </td>
+                    <td>{people["company_id"] ? people["company_id"] : ""}</td>
                     <td>
-                      {people.profiles[0].profile_details.current_company}
+                      <a
+                        href={
+                          people["profile_url"] ? people["profile_url"] : ""
+                        }
+                      >
+                        {people["profile_url"] ? people["profile_url"] : ""}
+                      </a>
                     </td>
-                    <td>{people.profiles[0].profile_url}</td>
-                    <td>{people.industry}</td>
                     <td>{"industry"}</td>
-                    <td>{people.last_updated}</td>
+                    <td>
+                      {people["profile_details"]["location"]
+                        ? people["profile_details"]["location"]
+                        : ""}
+                    </td>
+                    <td class="text-nowrap">
+                      {people.last_updated.substring(0, 10)}
+                    </td>
                     <td>
                       <Link
                         to={

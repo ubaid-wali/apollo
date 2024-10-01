@@ -1,6 +1,8 @@
 import {
   faEdit,
   faEllipsis,
+  faPen,
+  faPenAlt,
   faTrashAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -46,7 +48,14 @@ const PromptSessionsListing = () => {
 
   return (
     <div className="prompt-sessions">
-      <h6>Analysis</h6>
+      <div class="d-flex align-items-center justify-content-between p-2">
+        <h6>Analysis</h6>
+        <div>
+          <Link to={"/prompt/"}>
+            <FontAwesomeIcon icon={faPen} />
+          </Link>
+        </div>
+      </div>
       <div className="prompt-list">
         {/* <div className="dropdown">
           <button
@@ -62,7 +71,7 @@ const PromptSessionsListing = () => {
         <div>
           {data.map((thread, index) => (
             <Link
-              to={"/dashboard/?thread_id=" + thread["thread_id"]}
+              to={"/prompt/?thread_id=" + thread["thread_id"]}
               className="d-flex align-items-center justify-content-between dropdown-toggle"
               type="button"
             >

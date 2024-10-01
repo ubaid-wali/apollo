@@ -8,6 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
   color: #1e1e1e;
+  overflow-x: hidden;
 }
 .loader {
   border: 10px solid #f3f3f3;
@@ -109,6 +110,11 @@ code {
   font-size: 18px;
   margin-bottom: 15px;
 }
+.previous-sessions .more-sessions {
+  text-decoration: none;
+  color: #1e1e1e;
+  font-size: 14px;
+}
 .sidebar .session-list {
   list-style: none;
   padding-left: 0;
@@ -134,7 +140,12 @@ code {
   background-color: #1e1e1e;
 }
 .prompt-sessions {
-  padding: 20px;
+  padding: 20px 0 20px 20px;
+}
+.prompt-list {
+  max-height: 300px;
+  overflow-y: scroll;
+  padding-right: 10px;
 }
 .prompt-list a {
   background-color: rgba(30, 30, 30, 0.3);
@@ -150,6 +161,87 @@ code {
 }
 .prompt-list a::after {
   display: none;
+}
+.prompt .search-form {
+  padding: 10px 0 10px 0;
+}
+.search-wrapper {
+  background-color: #f2f4f8;
+}
+
+.search-wrapper .chip {
+  background-color: #ffffff;
+  color: #697077;
+  font-family: "Roboto";
+  font-weight: regular;
+}
+.search-wrapper .chip img {
+  fill: #697077;
+  filter: invert(1);
+  /* -webkit-mask: url(logo.svg) no-repeat center; */
+  /* mask: url(logo.svg) no-repeat center; */
+}
+.multiSelectContainer li:hover {
+  background-color: #697077 !important;
+  color: #fff;
+}
+.highlightOption {
+  background-color: #697077 !important;
+  color: #fff;
+}
+.f-group {
+  margin-bottom: 10px;
+}
+.multiSelectContainer input {
+  margin-top: 0 !important;
+}
+.btn-previous {
+  border: 1px solid #697077;
+  color: #697077;
+  padding: 5px 25px;
+  border-radius: 50px;
+}
+
+.btn-previous:hover {
+  border: 1px solid #697077;
+  background-color: #697077;
+  color: #fff;
+  border-radius: 50px;
+}
+
+.btn-next {
+  border: 1px solid #697077;
+  background-color: #697077;
+  color: #fff;
+  padding: 5px 25px;
+  border-radius: 50px;
+}
+.btn-submit {
+  border: 1px solid #697077;
+  background-color: #697077;
+  color: #fff;
+  padding: 5px 25px;
+  border-radius: 50px;
+}
+.btn-submit:hover {
+  background-color: #000;
+  color: #fff;
+}
+.session-cycle-modal .modal-body .form-body {
+  height: 250px;
+  max-height: 250px;
+  padding-right: 10px;
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.session-cycle-modal .step {
+  min-width: 100%;
+}
+.session-field {
+  border-radius: 50px;
+  margin-top: 5px;
 }
 /* Sidebar */
 
@@ -395,11 +487,24 @@ code {
   padding: 10px 30px;
   text-wrap: nowrap;
 }
+.chat-window {
+  min-height: 250px;
+}
 
 .option-list-modal .modal-title {
   font-size: 16px !important;
   font-weight: bold !important;
   font-family: "Roboto" !important;
+}
+.option-list-modal .form-body {
+  height: 250px;
+  max-height: 250px;
+  padding-right: 10px;
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  overflow-x: hidden;
 }
 .select-list-table thead th {
   background-color: #000000 !important;
@@ -419,6 +524,14 @@ code {
   border: none !important;
   color: cornflowerblue !important;
   background: none !important;
+}
+.option-list-modal .modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  overflow-y: hidden;
+  max-height: 350px;
+  overflow-x: hidden;
+  padding: 10px;
 }
 
 /* Chat Styling */
@@ -664,8 +777,14 @@ code {
 .profile-main {
   margin-bottom: 30px;
 }
+.profile-main img {
+  border-radius: 100%;
+}
 .profile-intro {
   margin-top: 20px;
+}
+.profile-intro .pro {
+  max-width: 50%;
 }
 .pProfile .linkedin-btn {
   background-color: #007ab9;
@@ -723,6 +842,9 @@ code {
   font-size: 16px;
   font-weight: regular;
 }
+.pProfile .edu-box {
+  margin-bottom: 30px;
+}
 .pProfile .edu-box h5 {
   color: #8f92ab;
   font-size: 20px;
@@ -731,8 +853,12 @@ code {
 .pProfile .edu-box p {
   font-size: 15px;
   font-weight: regular;
+  margin-bottom: 10px;
 }
 /* Professional Profile */
+.c-listing {
+  overflow-x: scroll;
+}
 /* Company Listing */
 .c-listing thead tr th {
   background-color: #fafafa;

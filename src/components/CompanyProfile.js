@@ -85,20 +85,19 @@ const CompanyProfile = () => {
                   </span>
                 </div>
                 <p>
-                  Accenture is a renowned worldwide IT services company that
-                  excels in digital, cloud, and security solutions. With an
-                  extensive range of expertise across over 40 industries, we
-                  provide a comprehensive
+                  is a renowned worldwide IT services company that excels in
+                  digital, cloud, and security solutions. With an extensive
+                  range of expertise across over 40 industries, we provide a
+                  comprehensive
                 </p>
                 <p>
                   <span></span>
-                  North America Address 1003 E. 4th Place, 8th Floor, Los
-                  Angeles, California 90013, United States
+                  {companyData.location}
                 </p>
               </div>
             </div>
 
-            <div className="card">
+            {/* <div className="card">
               <h3>Overview</h3>
               <p>
                 Accenture is a renowned worldwide IT services company that
@@ -119,7 +118,7 @@ const CompanyProfile = () => {
                 We embrace the transformative power of change to create shared
                 success and make a meaningful impact.
               </p>
-            </div>
+            </div> */}
 
             <div className="card">
               <h3>Technology</h3>
@@ -144,7 +143,7 @@ const CompanyProfile = () => {
             </div>
 
             <div className="card">
-              <h3>Accenture Services</h3>
+              <h3>Services</h3>
               <div className="t-badges">
                 {companyData.keywords.map((keyword, index) => (
                   <a href="#">{keyword}</a>
@@ -194,8 +193,8 @@ const CompanyProfile = () => {
               </div>
             </div>
 
-            <div className="card">
-              <h3>Key Dissection Makers </h3>
+            {/* <div className="card">
+              <h3>Key Decision Makers </h3>
               <div className="employee-list">
                 <div className="container-fluid">
                   <div className="row">
@@ -286,7 +285,7 @@ const CompanyProfile = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

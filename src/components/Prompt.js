@@ -11,7 +11,14 @@ import loggedInUser from "../img/logged-in-user.png";
 import { useEffect, useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import axios from "axios";
-import { useLocation, useParams, useSearchParams } from "react-router-dom";
+import {
+  Navigate,
+  redirect,
+  useLocation,
+  useNavigate,
+  useParams,
+  useSearchParams,
+} from "react-router-dom";
 
 const employeeList = [
   {
@@ -94,6 +101,16 @@ const makePostRequest = async (url, data) => {
   }
 };
 
+const makeGetRequest = async (url) => {
+  try {
+    const response = await axios.get(url);
+    return response.data; // Return the data from the response
+  } catch (error) {
+    console.error("Error making POST request", error);
+    throw error;
+  }
+};
+
 const Prompt = () => {
   // State to store API data
   const [data, setData] = useState(null);
@@ -111,13 +128,16 @@ const Prompt = () => {
   const [showCompany, setShowCompany] = useState(false);
   const [showPerson, setShowPerson] = useState(false);
 
-  const [typeId, setTypeId] = useState(0);
+  const [typeId, setTypeId] = useState("");
   const [typeName, setTypeName] = useState("");
   const [isType, setIsType] = useState(false);
   const [threadData, setThreadData] = useState([]);
   // const [threatID, setThreadID] = useState([]);
-  const [newPromptResponse, setNewPromptResponse] = useState("");
-
+  const [newPromptResponse, setNewPromptResponse] = useState({});
+  const [companies, setCompanies] = useState("");
+  const [companyLoading, setCompanyLoading] = useState(true);
+  const [people, setPeople] = useState("");
+  const [peopleLoading, setPeopleLoading] = useState(true);
   // const { thread_id } = useParams();
 
   // POST request on page load
@@ -131,7 +151,7 @@ const Prompt = () => {
   // setThreadID(thread_id);
 
   // console.log(thread_id);
-
+  // setThreadData("");
   const fetchData = async () => {
     setLoading(true);
     const url = "http://35.225.202.65:5001/locate_thread";
@@ -148,10 +168,42 @@ const Prompt = () => {
   useEffect(() => {
     if (thread_id) {
       fetchData();
+    } else {
+      setLoading(false);
+      setThreadData("");
     }
-  }, [location, thread_id]); // Empty array ensures the effect runs only on page load
+  }, [location, thread_id]);
 
-  console.log(threadData);
+  const fetchCompanies = async () => {
+    const url2 = "http://34.169.65.115:5000/api/v1/companies";
+
+    try {
+      const response = await makeGetRequest(url2);
+      setCompanyLoading(false);
+      setCompanies(response); // Set the initial data from the response
+    } catch (error) {
+      console.error("Error fetching initial data", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchCompanies();
+  }, []);
+  const fetchPeople = async () => {
+    const url2 = "http://34.169.65.115:5000/api/v1/profiles";
+
+    try {
+      const response = await makeGetRequest(url2);
+      setPeopleLoading(false);
+      setPeople(response); // Set the initial data from the response
+    } catch (error) {
+      console.error("Error fetching initial data", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchPeople();
+  }, []);
 
   const handleCloseCompany = () => setShowCompany(false);
   const handleShowCompany = () => setShowCompany(true);
@@ -173,38 +225,86 @@ const Prompt = () => {
       setSelectedItem("");
     }
   };
-
+  const handleTypeID = (e) => {
+    setTypeId(e.target.id);
+  };
+  const navigate = useNavigate();
   const handleSubmit = async (event) => {
     setLoading(true);
-    setSearch("");
+
     event.preventDefault();
-    alert(search);
+    // alert(search);
     // promptSearch(true);
-    const formData = {
-      prompt: search,
-      identifier: typeName,
-      profile_type: selectedItem,
-      thread_id: thread_id,
-    };
+    console.log(typeId);
 
-    const url = "http://35.225.202.65:5001/existing_thread_gpt_prompt_analysis";
+    if (thread_id != null) {
+      console.log("thread true");
+      const formData = {
+        prompt: search,
+        identifier: typeId,
+        profile_type: selectedItem,
+        thread_id: thread_id,
+      };
 
-    try {
-      const response = await makePostRequest(url, formData); // Submit the form data
-      setNewPromptResponse(response); // Set the submitted data from the response
-      if (response["message"] === "Processed successfully") {
-        fetchData();
+      const url =
+        "http://35.225.202.65:5001/existing_thread_gpt_prompt_analysis";
+
+      try {
+        const response = await makePostRequest(url, formData); // Submit the form data
+        setNewPromptResponse(response); // Set the submitted data from the response
+        if (response["message"] === "Processed successfully") {
+          setSearch("");
+          setTypeId("");
+          setTypeName("");
+          setIsType(false);
+          setSelectedItem("");
+          // console.log("message true");
+          fetchData();
+        } else {
+          // console.log("message false");
+        }
+      } catch (error) {
+        console.error("Error submitting form data", error);
       }
-    } catch (error) {
-      console.error("Error submitting form data", error);
+    } else {
+      console.log("thread false");
+
+      const formData2 = {
+        prompt: search,
+        identifier: typeName,
+        profile_type: selectedItem,
+      };
+
+      const url2 = "http://35.225.202.65:5001/gptpromptanalysis";
+
+      try {
+        const response = await makePostRequest(url2, formData2); // Submit the form data
+        setLoading(false);
+        setNewPromptResponse(response); // Set the submitted data from the response
+        console.log(response);
+        if (response["message"] === "Processed successfully") {
+          console.log("message true");
+          setSearch("");
+          setTypeId("");
+          setTypeName("");
+          setIsType(false);
+          setSelectedItem("");
+          navigate(`/prompt/?thread_id=${response["thread_id"]}`);
+          // fetchData();
+        } else {
+          console.log("message false");
+        }
+      } catch (error) {
+        console.error("Error submitting form data", error);
+      }
     }
   };
 
-  const deleteType = (e) => {
-    setTypeId(0);
-    setTypeName("");
-    setIsType(false);
-  };
+  // const deleteType = (e) => {
+  //   setTypeId(0);
+  //   setTypeName("");
+  //   setIsType(false);
+  // };
 
   const typeSelectHandle = (e) => {
     setTypeId(e.target.id);
@@ -214,31 +314,6 @@ const Prompt = () => {
     handleCloseCompany();
     // console.log(typeId);
   };
-
-  // const response = makePostRequest(
-  //   "http://35.225.202.65:5001/locate_thread",
-  //   data2
-  // );
-
-  // function getThreadData(thread_id) {
-  //   try {
-  //     const data2 = {
-  //       thread_id: thread_id,
-  //     };
-  //     const responseData = makePostRequest(
-  //       "http://35.225.202.65:5001/locate_thread",
-  //       data2
-  //     );
-
-  //     console.log("Retrieved JSON data:", responseData); // JSON data is logged here
-  //   } catch (error) {
-  //     console.error("Error retrieving data:", error);
-  //   }
-  // }
-
-  // getThreadData();
-
-  // console.log(response);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -251,7 +326,7 @@ const Prompt = () => {
 
   return (
     <div className="prompt">
-      <div>
+      <div className="chat-window">
         {/* <section className="msger">
           <main className="msger-chat">
             <div className="msg right-msg">
@@ -324,40 +399,42 @@ const Prompt = () => {
           </main>
         </section> */}
 
-        {threadData.map((thread, index) => (
-          <main className="msger-chat">
-            <div className="msg right-msg">
-              <div className="msg-img">
-                <img src={loggedInUser} alt="" />
-              </div>
+        {threadData
+          ? threadData.map((thread, index) => (
+              <main className="msger-chat">
+                <div className="msg right-msg">
+                  <div className="msg-img">
+                    <img src={loggedInUser} alt="" />
+                  </div>
 
-              <div className="msg-bubble">
-                <div className="msg-info">
-                  <div className="msg-info-name">Joe</div>
-                  <div className="msg-info-time">{thread["timestamp"]}</div>
+                  <div className="msg-bubble">
+                    <div className="msg-info">
+                      {/* <div className="msg-info-name">Joe</div> */}
+                      <div className="msg-info-time">{thread["timestamp"]}</div>
+                    </div>
+
+                    <div className="msg-text">{thread["llm_prompt"]}</div>
+                  </div>
                 </div>
+                <div className="msg left-msg">
+                  <div className="msg-img">
+                    <img src={apolloChat} alt="" />
+                  </div>
 
-                <div className="msg-text">{thread["llm_prompt"]}</div>
-              </div>
-            </div>
-            <div className="msg left-msg">
-              <div className="msg-img">
-                <img src={apolloChat} alt="" />
-              </div>
+                  <div className="msg-bubble">
+                    <div className="msg-info">
+                      <div className="msg-info-name">P 55</div>
+                      <div className="msg-info-time">{thread["timestamp"]}</div>
+                    </div>
 
-              <div className="msg-bubble">
-                <div className="msg-info">
-                  <div className="msg-info-name">Apollo</div>
-                  <div className="msg-info-time">{thread["timestamp"]}</div>
+                    <div className="msg-text">
+                      <p>{thread["analysis_result"]}</p>
+                    </div>
+                  </div>
                 </div>
-
-                <div className="msg-text">
-                  <p>{thread["analysis_result"]}</p>
-                </div>
-              </div>
-            </div>
-          </main>
-        ))}
+              </main>
+            ))
+          : ""}
       </div>
       <form onSubmit={handleSubmit}>
         <div className="search-box d-flex align-items-center">
@@ -376,10 +453,12 @@ const Prompt = () => {
           </div>
           <div class="profile-type">
             {isType ? (
-              <button class="badge-btn" onClick={deleteType}>
+              <button class="badge-btn">
                 {typeName} <FontAwesomeIcon icon={faXmark} />
               </button>
-            ) : null}
+            ) : (
+              ""
+            )}
           </div>
           {/* <div>{selectedItem}<  /div> */}
           <div className="search-options d-flex align-items-center">
@@ -399,7 +478,14 @@ const Prompt = () => {
               </select>
             </div>
             <div>
-              <input hidden value={typeId} type="text" name="" id="" />
+              <input
+                onChange={handleTypeID}
+                hidden
+                value={typeId}
+                type="text"
+                name=""
+                id=""
+              />
             </div>
             <div className="button-box">
               <button type="submit" className="btn">
@@ -419,40 +505,48 @@ const Prompt = () => {
           <Modal.Title>Top Companies List</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <table class="table select-list-table">
-            <thead>
-              <tr>
-                <th scope="col" className="text-nowrap">
-                  Employee Name
-                </th>
-                <th scope="col">Country</th>
-                <th scope="col">LinkedIn</th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody>
-              {CompanyList.map((company, index) => (
-                <tr key={index}>
-                  <th scope="row">{company.name}</th>
-                  <td>{company.country}</td>
-                  <td>{company.website}</td>
-                  <td>
-                    <button
-                      onClick={typeSelectHandle}
-                      value={company.name}
-                      id={company.id}
-                      className=""
-                    >
-                      Select
-                    </button>
-                  </td>
+          <div className="form-body">
+            <table class="table select-list-table">
+              <thead>
+                <tr>
+                  <th scope="col" className="text-nowrap">
+                    Employee Name
+                  </th>
+                  <th scope="col">Country</th>
+                  <th scope="col">LinkedIn</th>
+                  <th scope="col"></th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {companyLoading === false
+                  ? companies.map((company, index) => (
+                      <tr key={index}>
+                        <th scope="row">{company.name}</th>
+                        <td>{company.location}</td>
+                        <td>
+                          {company["social media"]
+                            ? company["social media"].website_url
+                            : ""}
+                        </td>
+                        <td>
+                          <button
+                            onClick={typeSelectHandle}
+                            value={company.name}
+                            id={company._id["$oid"]}
+                            className=""
+                          >
+                            Select
+                          </button>
+                        </td>
+                      </tr>
+                    ))
+                  : "loading"}
+              </tbody>
+            </table>
+          </div>
 
           <div className="prompt">
-            <form>
+            <form class="search-form">
               <div
                 className="search-box d-flex align-items-center"
                 style={{ maxWidth: "100%" }}
@@ -490,38 +584,57 @@ const Prompt = () => {
         </Modal.Header>
 
         <Modal.Body>
-          <table class="table select-list-table">
-            <thead>
-              <tr>
-                <th scope="col">Employee Name</th>
-                <th scope="col">Country</th>
-                <th scope="col">LinkedIn</th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody>
-              {employeeList.map((employee, index) => (
-                <tr key={index}>
-                  <th scope="row">{employee.name}</th>
-                  <td>{employee.country}</td>
-                  <td>{employee.linkedin}</td>
-                  <td>
-                    <button
-                      onClick={typeSelectHandle}
-                      value={employee.name}
-                      id={employee.id}
-                      className=""
-                    >
-                      Select
-                    </button>
-                  </td>
+          <div className="form-body">
+            <table class="table select-list-table">
+              <thead>
+                <tr>
+                  <th scope="col">Employee Name</th>
+                  <th scope="col">Country</th>
+                  <th scope="col">LinkedIn</th>
+                  <th scope="col"></th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {peopleLoading === false
+                  ? people.map((person, index) => (
+                      <tr key={index}>
+                        <th scope="row">
+                          {person["profile_details"]["name"]
+                            ? person["profile_details"]["name"]
+                            : ""}
+                          {/* {person["profiles"]} */}
+                        </th>
+                        <td>
+                          {person["profile_details"]["location"]
+                            ? person["profile_details"]["location"]
+                            : ""}
+                        </td>
+                        <td>
+                          {person["profile_url"] ? person["profile_url"] : ""}
+                        </td>
+                        <td>
+                          <button
+                            onClick={typeSelectHandle}
+                            value={
+                              person["profile_details"]["name"]
+                                ? person["profile_details"]["name"]
+                                : ""
+                            }
+                            id={person["profile_url"]}
+                            className=""
+                          >
+                            Select
+                          </button>
+                        </td>
+                      </tr>
+                    ))
+                  : "Loading"}
+              </tbody>
+            </table>
+          </div>
 
           <div className="prompt">
-            <form>
+            <form class="search-form">
               <div
                 className="search-box d-flex align-items-center"
                 style={{ maxWidth: "100%" }}

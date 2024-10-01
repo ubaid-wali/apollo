@@ -16,6 +16,8 @@ import Prompt from "./components/Prompt";
 import ProfessionalProfile from "./components/ProfessionalProfile";
 import SessionProgress from "./components/SessionProgress";
 import ProfessionalsListing from "./components/ProfessionalsListing";
+import CompanySearch from "./components/CompanySearch";
+import AllSessions from "./components/AllSessions";
 
 const Layout = () => {
   return (
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
+        // element: ,
+      },
+      {
+        path: "/all-sessions",
+        element: <AllSessions />,
+      },
+      {
+        path: "/prompt",
         element: <Prompt />,
       },
       {

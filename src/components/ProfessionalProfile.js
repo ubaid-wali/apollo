@@ -75,13 +75,13 @@ const ProfessionalProfile = () => {
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-12">
-            <div className="company-intro d-flex align-items-center justify-content-center">
-              <div className="img-box">
-                <img src={accentureImage} alt="" />
+            <div className="company-intro d-flex align-items-center justify-content-between">
+              <div className="img-box" style={{ width: "20%" }}>
+                <img src={personData.profile_details.profile_pic_url} />
               </div>
-              <div className="content">
+              <div className="content" style={{ width: "90%" }}>
                 <div className="d-flex align-items-center justify-content-between">
-                  {/* <h2>{personData.}</h2> */}
+                  <h2>{personData["name"]}</h2>
                   <span>
                     <a className="website-link" href="">
                       Visit Website{" "}
@@ -89,16 +89,10 @@ const ProfessionalProfile = () => {
                     </a>
                   </span>
                 </div>
-                <p>
-                  Accenture is a renowned worldwide IT services company that
-                  excels in digital, cloud, and security solutions. With an
-                  extensive range of expertise across over 40 industries, we
-                  provide a comprehensive
-                </p>
+                <p>{personData.company_id}</p>
                 <p>
                   <span></span>
-                  North America Address 1003 E. 4th Place, 8th Floor, Los
-                  Angeles, California 90013, United States
+                  {personData.profile_details.location}
                 </p>
               </div>
             </div>
@@ -112,21 +106,23 @@ const ProfessionalProfile = () => {
             <div className="card">
               <div className="profile-main">
                 <div className="img-box">
-                  <img src={jacobJones} alt="" />
+                  <img src={personData.profile_details.profile_pic_url} />
                 </div>
                 <div className="profile-intro d-flex align-items-center justify-content-between">
-                  <div>
+                  <div className="pro">
                     <h3>{personData.profile_details.name}</h3>
-                    <p className="designation">Senrior Graphics Designer</p>
+                    <p className="designation">
+                      {personData.profile_details.position}
+                    </p>
                     <p className="location">
                       <span>
                         <FontAwesomeIcon icon={faLocationPin} />
                       </span>
-                      <span>Toronto, Canada</span>
+                      <span>{personData.profile_details.location}</span>
                     </p>
                   </div>
-                  <div className="linkedin-box">
-                    <a className="linkedin-btn">
+                  <div className="pro linkedin-box">
+                    <a href={personData.profile_url} className="linkedin-btn">
                       <FontAwesomeIcon icon={faLinkedinIn} /> Linkedin
                     </a>
                   </div>
@@ -135,30 +131,7 @@ const ProfessionalProfile = () => {
 
               <div className="persona">
                 <h4>Persona:</h4>
-                <p>
-                  An experienced designer with a strong aesthetic sensibility
-                  and two years of professional experience in graphic and web
-                  design, I possess a deep understanding of visual storytelling
-                  and brand communication. My expertise in Adobe Creative Suite
-                  allows me to create visually compelling and cohesive designs
-                  that align with client objectives. I am adept at transforming
-                  ideas into polished visuals across various platforms,
-                  including digital, print, and web, ensuring consistency and
-                  impact.
-                </p>
-
-                <p>
-                  With hands-on experience in diverse industries, I adapt
-                  swiftly to different design requirements, delivering
-                  high-quality results in fast-paced environments. My
-                  collaborative approach and strong communication skills enable
-                  me to work effectively with clients, stakeholders, and team
-                  members, ensuring that projects are delivered on time and to
-                  the highest standards. My design process is rooted in
-                  understanding the client’s vision, allowing me to craft
-                  designs that resonate with target audiences and elevate brand
-                  presence.
-                </p>
+                <p>{personData.analysis.persona_analyis[0].persona_analysis}</p>
               </div>
             </div>
           </div>
@@ -167,33 +140,7 @@ const ProfessionalProfile = () => {
             <div className="card">
               <div className="persona">
                 <h4>Disc Assessment:</h4>
-                <p>
-                  Jacob Jones exhibits a high level of Dominance and Influence
-                  in his approach to Figma design. His Dominance trait is
-                  evident in his assertive decision-making and willingness to
-                  take charge of complex design projects. He quickly identifies
-                  key design objectives and moves decisively to implement
-                  solutions, often leading his team with confidence. Jacob's
-                  Influence is also notable, as he communicates his ideas with
-                  enthusiasm, easily persuading stakeholders and team members to
-                  buy into his vision. His ability to combine a strong,
-                  results-driven approach with persuasive communication ensures
-                  that his designs not only meet client expectations but also
-                  push creative boundaries.
-                </p>
-
-                <p>
-                  However, Jacob's preference for rapid execution and
-                  high-energy collaboration may sometimes overlook the need for
-                  detailed analysis and step-by-step refinement, areas typically
-                  associated with Steadiness and Compliance traits. While his
-                  speed and charisma are strengths, balancing these with a more
-                  methodical review process could enhance the overall quality
-                  and consistency of his work. Jacob’s tendency to drive
-                  projects forward can be highly effective, but incorporating
-                  more structured feedback loops might help in achieving more
-                  nuanced and polished final designs
-                </p>
+                <p>{personData.analysis.disc_analysis[0].disc_analysis}</p>
               </div>
             </div>
 
@@ -201,14 +148,15 @@ const ProfessionalProfile = () => {
               <div className="persona">
                 <h4>Education</h4>
                 <div className="edu-list">
-                  <div className="edu-box">
-                    <h5>Interface Design Web & Mobile</h5>
-                    <p>T-Academy, 2020 </p>
-                  </div>
-                  <div className="edu-box">
-                    <h5>Belarusian State Academy of Arts, </h5>
-                    <p>Postgraduate Diploma, 2015 - 2017 </p>
-                  </div>
+                  {personData.profile_details.education.map((edu) => (
+                    <div>
+                      <div className="edu-box">
+                        <h5>{edu.degree}</h5>
+                        <p>{edu.school} </p>
+                        <p>{edu.years} </p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

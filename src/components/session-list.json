@@ -1,0 +1,131 @@
+[
+  {
+    "_id": {
+      "$oid": "66e9fb0096130d19034a99da"
+    },
+    "apollo_ids": [],
+    "currently_using_any_of_technology_uids": "Microsoft 365",
+    "organization_locations": "United States",
+    "revenue_range": {
+      "max": 1000000,
+      "min": 500000
+    },
+    "session_name": "salesforce test",
+    "status": "active"
+  },
+  {
+    "_id": {
+      "$oid": "66ea3fb196130d19034a9a14"
+    },
+    "apollo_ids": [
+      "54a1363369702d46f0320601",
+      "55698da9736964251e2b5300",
+      "5a9e720ca6da98d95ff9dd3c",
+      "56d70ac7f3e5bb11700021f0",
+      "5e1378c1912b3d00f05a603f",
+      "60495aa29b0849000119598b",
+      "54a11c8969702d7fe67ac200",
+      "54a1202769702d86b6b11002",
+      "54a1273c69702d9b8b766700",
+      "54a1344969702d3a9c262200"
+    ],
+    "revenue_range": {
+      "max": 1000000,
+      "min": 500000
+    },
+    "session_name": null,
+    "status": "active"
+  },
+  {
+    "_id": {
+      "$oid": "66ea429f72b04d4cc2b6d179"
+    },
+    "apollo_ids": [
+      "5e5d12bc6ec08400ea8980bf",
+      "5fc9c1723767f80001222d9a",
+      "60485ece4379e000017e9d24",
+      "5a9f20fda6da98d9978095d1",
+      "55694a937369642174152a00",
+      "5c24af5380f93e23a0330d76",
+      "5e5700751d824a00010d68d6",
+      "5e59b44e6391dd0001ffa058",
+      "5a9daf4fa6da98d97e775c7b",
+      "5d32b4fbf6512519a9710f07"
+    ],
+    "revenue_range": {
+      "max": 5000000,
+      "min": 2000000
+    },
+    "session_name": null,
+    "status": "active"
+  },
+  {
+    "_id": {
+      "$oid": "66ead9fd65d3dd5fea592185"
+    },
+    "apollo_ids": [],
+    "session_name": "eee",
+    "status": "inactive"
+  },
+  {
+    "_id": {
+      "$oid": "66eada2a65d3dd5fea59218b"
+    },
+    "session_name": null,
+    "status": "inactive"
+  },
+  {
+    "_id": {
+      "$oid": "66eb122a65d3dd5fea5921bc"
+    },
+    "session_name": null,
+    "status": "inactive"
+  },
+  {
+    "_id": {
+      "$oid": "66eb18d165d3dd5fea5921d6"
+    },
+    "apollo_ids": [],
+    "currently_using_any_of_technology_uids": "Google Font API",
+    "organization_locations": "Dallas",
+    "revenue_range": {
+      "max": 500000,
+      "min": 250000
+    },
+    "session_name": "data",
+    "status": "active"
+  },
+  {
+    "_id": {
+      "$oid": "66ed69eb65d3dd5fea592206"
+    },
+    "session_name": null,
+    "status": "inactive"
+  },
+  {
+    "_id": {
+      "$oid": "66fab89dd5a2954aa482c823"
+    },
+    "linkedin_profiles_progress": {
+      "status": "Progress: 3/3 profiles completed (100.00% complete)"
+    },
+    "session_id": "123"
+  },
+  {
+    "_id": {
+      "$oid": "66fbef35740792ba9730d07f"
+    },
+    "apollo_ids": [
+      "5bcf587b1dc2729d0486f0c4",
+      "5e57a3d454322100012399b3",
+      "5a9cdd56a6da98d94669c840"
+    ],
+    "apollo_progress": {
+      "processed_count": 0,
+      "total_count": 3
+    },
+    "search_query": {},
+    "session_name": "string",
+    "status": "active"
+  }
+]

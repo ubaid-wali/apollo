@@ -7,7 +7,6 @@ const dashboard = () => {
     <div className="dashboard">
       <Topnav />
       <Mainboard />
-  
     </div>
   );
 };

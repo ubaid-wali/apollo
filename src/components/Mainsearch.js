@@ -6,69 +6,108 @@ import {
   faUser,
   faUserAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+const makeGetRequest = async (url) => {
+  try {
+    const response = await axios.get(url);
+    return response.data; // Return the data from the response
+  } catch (error) {
+    console.error("Error making POST request", error);
+    throw error;
+  }
+};
 const Mainsearch = () => {
+  // State to store API data
+  const [searchData, setSearchData] = useState(null);
+
+  // State to handle loading state
+  const [loading, setLoading] = useState(true);
+
+  // State to handle errors
+  const [error, setError] = useState(null);
+
+  const [search, setSearch] = useState("");
+  const [profileType, setProfileType] = useState("");
+
+  const handleSearchForm = (e) => {
+    e.preventDefault();
+    fetchData();
+  };
+
+  const typeChange = (e) => {
+    setProfileType(e.target.value);
+  };
+  const searchHandle = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const fetchData = async (search, profileType) => {
+    const url = `http://34.169.65.115:5000/api/v1/search?search_query=b12&profile_type=company`;
+    // const data = { search_query: search, profile_type: profileType }; // Replace with actual data to send
+
+    try {
+      const response = await makeGetRequest(url);
+      setLoading(false);
+      setSearchData(response); // Set the initial data from the response
+      console.log(searchData);
+    } catch (error) {
+      console.error("Error fetching initial data", error);
+    }
+  };
+  // useEffect(() => {}, []); // Empty array ensures the effect runs only on page load
+  // Show loading message while fetching data
+
+  // Show error message if there was an error
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return (
     <div className="mainsearch">
       <h1>Search For Company Or Profile</h1>
-      <form action="">
+      <form onSubmit={handleSearchForm}>
         <div className="search-box d-flex align-items-center">
           <div className="s-icon-box">
             <FontAwesomeIcon icon={faSearch} />
           </div>
           <div className="searchbar flex-grow-1">
-            <input type="text" placeholder="Search" />
+            <input
+              type="text"
+              onChange={searchHandle}
+              value={search}
+              placeholder="Search"
+            />
           </div>
           <div className="search-options d-flex align-items-center">
             <div className="input-group">
               <label className="input-group-text" htmlFor="">
-                <FontAwesomeIcon icon={faUser} />
+                {/* <FontAwesomeIcon icon={faUser} /> */}
               </label>
-              <select onChange=""
-                value="Profile Type"
+              <select
+                onChange={typeChange}
+                value={profileType}
                 className="form-select"
                 aria-label="Filter select"
               >
-                <option value="1">All</option>
-                <option value="2">Active</option>
-                <option value="3">Inactive</option>
-              </select>
-            </div>
-            <div className="input-group">
-              <label className="input-group-text" htmlFor="">
-                <FontAwesomeIcon icon={faLocationPin} />
-              </label>
-              <select onChange=""
-                value="Location"
-                className="form-select"
-                aria-label="Filter select"
-              >
-                <option value="1">All</option>
-                <option value="2">Active</option>
-                <option value="3">Inactive</option>
-              </select>
-            </div>
-            <div className="input-group">
-              <label className="input-group-text" htmlFor="">
-                <FontAwesomeIcon icon={faBuilding} />
-              </label>
-              <select onChange=""
-                value="Industry"
-                className="form-select"
-                aria-label="Filter select"
-              >
-                <option value="1">All</option>
-                <option value="2">Active</option>
-                <option value="3">Inactive</option>
+                <option value="">Select Type</option>
+                <option value="company">Company</option>
+                <option value="personal">Person</option>
               </select>
             </div>
             <div className="button-box">
-              <button className="btn">Find Company</button>
+              <button type="submit" className="btn">
+                Search
+              </button>
             </div>
           </div>
         </div>
       </form>
+
+      <div>{loading ? "" : "data"}</div>
     </div>
   );
 };
