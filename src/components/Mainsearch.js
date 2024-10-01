@@ -10,6 +10,8 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import CompanyProfile from "./CompanyProfile";
+import ProgressStats from "./ProgressStats";
 
 const makeGetRequest = async (url) => {
   try {
@@ -46,7 +48,9 @@ const Mainsearch = () => {
   };
 
   const fetchData = async (search, profileType) => {
-    const url = `http://34.169.65.115:5000/api/v1/search?search_query=b12&profile_type=company`;
+    const searchQuery = "B12";
+    const type = "company";
+    const url = `http://34.169.65.115:5000/api/v1/search?search_query=${searchQuery}&profile_type=${type}`;
     // const data = { search_query: search, profile_type: profileType }; // Replace with actual data to send
 
     try {
@@ -106,8 +110,9 @@ const Mainsearch = () => {
           </div>
         </div>
       </form>
-
-      <div>{loading ? "" : "data"}</div>
+      <div>{loading === true ? "" : <CompanyProfile data={searchData} />}</div>
+      <div></div>
+      {/* <ProgressStats /> */}
     </div>
   );
 };

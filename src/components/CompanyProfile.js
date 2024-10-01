@@ -19,7 +19,11 @@ const makePostRequest = async (url) => {
   }
 };
 
-const CompanyProfile = () => {
+const CompanyProfile = (props) => {
+  // console.log(props.data);
+  // const [parentData, setParentData] = useState();
+  // setParentData(props.data);
+  // const parentData props.data;
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const company_id = queryParams.get("company_id");
@@ -36,20 +40,26 @@ const CompanyProfile = () => {
   // Fetch data on component mount using axios
   // const apiUrl = "http://34.169.65.115:5000/api/v1/companies";
 
+  // setLoading(false);
+  // setCompanyData(props.data[0]);
+
   console.log(company_id);
   useEffect(() => {
     const fetchData = async () => {
-      const url = "http://34.169.65.115:5000/api/v1/companies/" + company_id;
-      // const data = { company_id: company_id }; // Replace with actual data to send
-
-      try {
-        const response = await makePostRequest(url);
-        setLoading(false);
-        setCompanyData(response); // Set the initial data from the response
-      } catch (error) {
-        console.error("Error fetching initial data", error);
+      if (props.data) {
+      } else {
+        const url = "http://34.169.65.115:5000/api/v1/companies/" + company_id;
+        // const data = { company_id: company_id }; // Replace with actual data to send
+        try {
+          const response = await makePostRequest(url);
+          setLoading(false);
+          setCompanyData(response); // Set the initial data from the response
+        } catch (error) {
+          console.error("Error fetching initial data", error);
+        }
       }
     };
+
     fetchData();
   }, []); // Empty array ensures the effect runs only on page load
   // Show loading message while fetching data

@@ -14,10 +14,21 @@ const makeGetRequest = async (url) => {
   }
 };
 
+const makePostRequest = async (url, data) => {
+  try {
+    const response = await axios.post(url, data);
+    return response.data; // Return the data from the response
+  } catch (error) {
+    console.error("Error making POST request", error);
+    throw error;
+  }
+};
+
 const NewSession = () => {
   const [showSessionModal, setShowSessionModal] = useState(false);
   const [technologies, setTechnologies] = useState([]);
   const [industries, setIndustries] = useState([]);
+  const [locations, setLocations] = useState([]);
 
   const handleCloseSessionModal = () => setShowSessionModal(false);
 
@@ -25,6 +36,7 @@ const NewSession = () => {
   const [formData, setFormData] = useState({});
 
   const [show, setShow] = useState(false);
+  const [sessionName, setsessionName] = useState("");
   const [selectedCompanyName, setSelectedCompanyName] = useState([]);
   const [selectedRevenue, setSelectedRevenue] = useState([]);
   const [selectedTechnology, setSelectedTechnology] = useState([]);
@@ -66,14 +78,29 @@ const NewSession = () => {
         console.error("Error fetching initial data", error);
       }
     };
+    const fetchLocations = async () => {
+      const url = `http://34.169.65.115:5000/api/v1/get-attrs?type=locations`;
+      // const data = { thread_id: thread_id }; // Replace with actual data to send
+
+      try {
+        const response = await makeGetRequest(url);
+        setLoading(false);
+        setLocations(response); // Set the initial data from the response
+      } catch (error) {
+        console.error("Error fetching initial data", error);
+      }
+    };
     fetchTechnologies();
     fetchIndustries();
+    fetchLocations();
   }, []); // Empty array ensures the effect runs only on page load
 
-  const categories = technologies.map(item => item.category);
-  const industriesValue = industries.map(item => item.cleaned_name);
-  console.log(technologies);
-  console.log(industriesValue);
+  const categories = technologies.map((item) => item.category);
+  const industriesValue = industries.map((item) => item.cleaned_name);
+  const locationArray = locations.map((item) => item.cleaned_name);
+  // console.log(technologies);
+  // console.log(industriesValue);
+  // console.log(locationArray);
   const handleNext = () => {
     setStep(step + 1);
   };
@@ -86,10 +113,45 @@ const NewSession = () => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
+  // const sessionNameHandle = (e) => {
+  //   setsessionName(e.target.value);
+  // };
+
+  const submitSession = async () => {
+    const url = `http://34.169.65.115:5000/api/v1/sessions`;
+    const data = {
+      session_name: formData.name,
+      search_query: {
+        company: selectedCompanyName,
+        revenue: selectedRevenue,
+        technology: selectedTechnology,
+        location: selectedLocation,
+      },
+    }; // Replace with actual data to send
+
+    try {
+      const response = await makePostRequest(url, data);
+      setLoading(false);
+      // console.log(response);
+      setSelectedCompanyName([]);
+      setSelectedRevenue([]);
+      setSelectedTechnology([]);
+      setSelectedIndustry([]);
+      setSelectedLocation([]);
+      // const { name, value } = "";
+      setFormData({});
+
+      // setIndustries(response); // Set the initial data from the response
+    } catch (error) {
+      console.error("Error fetching initial data", error);
+    }
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // handle form submission
+
+    submitSession();
+    setStep(1);
   };
 
   const handleSelect = (selectedList, setSelected) => {
@@ -201,7 +263,7 @@ const NewSession = () => {
                     <Form.Label>Location</Form.Label>
                     <Multiselect
                       isObject={false}
-                      options={["Toronto", "NYC", "London", "San Francisco"]}
+                      options={locationArray ? locationArray : "loading"}
                       selectedValues={selectedLocation}
                       onSelect={(selectedList) =>
                         handleSelect(selectedList, setSelectedLocation)
@@ -217,22 +279,22 @@ const NewSession = () => {
             </div>
             <div className="d-flex justify-content-between mt-4">
               {step > 1 && (
-                <button
+                <a
                   className="btn btn-previous"
                   variant="secondary"
                   onClick={handlePrevious}
                 >
                   Previous
-                </button>
+                </a>
               )}
               {step < 2 ? (
-                <button
+                <a
                   className="btn btn-next"
                   variant="primary"
                   onClick={handleNext}
                 >
                   Next
-                </button>
+                </a>
               ) : (
                 <button
                   className="btn btn-submit"
