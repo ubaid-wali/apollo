@@ -2,6 +2,7 @@ import {
   faAngleDown,
   faBuilding,
   faLocationPin,
+  faMapPin,
   faSearch,
   faUser,
   faUserAlt,
@@ -12,6 +13,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import CompanyProfile from "./CompanyProfile";
 import ProgressStats from "./ProgressStats";
+import CompanyListing from "./CompanyListing";
 
 const makeGetRequest = async (url) => {
   try {
@@ -89,7 +91,7 @@ const Mainsearch = () => {
           <div className="search-options d-flex align-items-center">
             <div className="input-group">
               <label className="input-group-text" htmlFor="">
-                {/* <FontAwesomeIcon icon={faUser} /> */}
+                <FontAwesomeIcon icon={faUser} />
               </label>
               <select
                 onChange={typeChange}
@@ -97,7 +99,37 @@ const Mainsearch = () => {
                 className="form-select"
                 aria-label="Filter select"
               >
-                <option value="">Select Type</option>
+                <option value="">Profile Type</option>
+                <option value="company">Company</option>
+                <option value="personal">Person</option>
+              </select>
+            </div>
+            <div className="input-group">
+              <label className="input-group-text" htmlFor="">
+                <FontAwesomeIcon icon={faMapPin} />
+              </label>
+              <select
+                onChange={typeChange}
+                value={profileType}
+                className="form-select"
+                aria-label="Filter select"
+              >
+                <option value="">location</option>
+                <option value="company">Company</option>
+                <option value="personal">Person</option>
+              </select>
+            </div>
+            <div className="input-group">
+              <label className="input-group-text" htmlFor="">
+                <FontAwesomeIcon icon={faBuilding} />
+              </label>
+              <select
+                onChange={typeChange}
+                value={profileType}
+                className="form-select"
+                aria-label="Filter select"
+              >
+                <option value="">Industry</option>
                 <option value="company">Company</option>
                 <option value="personal">Person</option>
               </select>
@@ -110,7 +142,7 @@ const Mainsearch = () => {
           </div>
         </div>
       </form>
-      <div>{loading === true ? "" : <CompanyProfile data={searchData} />}</div>
+      <div>{loading === true ? "" : <CompanyListing data={searchData} />}</div>
       <div></div>
       {/* <ProgressStats /> */}
     </div>

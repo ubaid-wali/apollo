@@ -2,8 +2,19 @@ import btnStars from "../img/button-stars.png";
 import apolloIcon from "../img/c-icons/apollo-icon.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
+import { useState } from "react";
+
+
 
 const ProgressStats = () => {
+  const [percentage, setPercentage] = useState(10);
+
+  const incrementProgress = () => {
+    setPercentage((prevPercentage) =>
+      prevPercentage < 100 ? prevPercentage + 10 : 100
+    );
+  };
   return (
     <div className="container-fluid mb-4">
       <div className="row">
@@ -18,16 +29,24 @@ const ProgressStats = () => {
               <h6>Apollo</h6>
               <p>Profile Progress</p>
             </div>
-            <div>
-              <div className="progress blue">
-                <span className="progress-left">
-                  <span className="progress-bar"></span>
-                </span>
-                <span className="progress-right">
-                  <span className="progress-bar"></span>
-                </span>
-                <div className="progress-value">50%</div>
-              </div>
+            <div
+              style={{
+                width: 80,
+                marginLeft: "auto",
+                textAlign: "center",
+                position: "relative",
+              }}
+            >
+              <CircularProgressbar
+                value={percentage}
+                styles={buildStyles({
+                  pathColor: `#1e1e1e`,
+                  textColor: "#1e1e1e",
+                  trailColor: "#e9ecef",
+                  backgroundColor: "#ffffff",
+                })}
+              />
+              <p class="progress-text">50%</p>
             </div>
           </div>
         </div>
@@ -42,16 +61,24 @@ const ProgressStats = () => {
               <h6>AI Analysis</h6>
               <p>Profile Progress</p>
             </div>
-            <div>
-              <div className="progress blue">
-                <span className="progress-left">
-                  <span className="progress-bar"></span>
-                </span>
-                <span className="progress-right">
-                  <span className="progress-bar"></span>
-                </span>
-                <div className="progress-value">50%</div>
-              </div>
+            <div
+              style={{
+                width: 80,
+                marginLeft: "auto",
+                textAlign: "center",
+                position: "relative",
+              }}
+            >
+              <CircularProgressbar
+                value={percentage}
+                styles={buildStyles({
+                  pathColor: `#1e1e1e`,
+                  textColor: "#1e1e1e",
+                  trailColor: "#e9ecef",
+                  backgroundColor: "#ffffff",
+                })}
+              />
+              <p class="progress-text">50%</p>
             </div>
           </div>
         </div>
@@ -66,16 +93,24 @@ const ProgressStats = () => {
               <h6>AI Analysis</h6>
               <p>Profile Progress</p>
             </div>
-            <div>
-              <div className="progress blue">
-                <span className="progress-left">
-                  <span className="progress-bar"></span>
-                </span>
-                <span className="progress-right">
-                  <span className="progress-bar"></span>
-                </span>
-                <div className="progress-value">50%</div>
-              </div>
+            <div
+              style={{
+                width: 80,
+                marginLeft: "auto",
+                textAlign: "center",
+                position: "relative",
+              }}
+            >
+              <CircularProgressbar
+                value={percentage}
+                styles={buildStyles({
+                  pathColor: `#1e1e1e`,
+                  textColor: "#1e1e1e",
+                  trailColor: "#e9ecef",
+                  backgroundColor: "#ffffff",
+                })}
+              />
+              <p class="progress-text">50%</p>
             </div>
           </div>
         </div>
@@ -90,16 +125,24 @@ const ProgressStats = () => {
               <h6>AI Analysis</h6>
               <p>Profile Progress</p>
             </div>
-            <div>
-              <div className="progress blue">
-                <span className="progress-left">
-                  <span className="progress-bar"></span>
-                </span>
-                <span className="progress-right">
-                  <span className="progress-bar"></span>
-                </span>
-                <div className="progress-value">90%</div>
-              </div>
+            <div
+              style={{
+                width: 80,
+                marginLeft: "auto",
+                textAlign: "center",
+                position: "relative",
+              }}
+            >
+              <CircularProgressbar
+                value={percentage}
+                styles={buildStyles({
+                  pathColor: `#1e1e1e`,
+                  textColor: "#1e1e1e",
+                  trailColor: "#e9ecef",
+                  backgroundColor: "#ffffff",
+                })}
+              />
+              <p class="progress-text">50%</p>
             </div>
           </div>
         </div>

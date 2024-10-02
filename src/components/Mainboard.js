@@ -4,8 +4,9 @@ import CompanyProfile from "./CompanyProfile";
 import ProfessionalProfile from "./ProfessionalProfile";
 import CompanyListing from "./CompanyListing";
 import dashboard from "./Dashboard";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import MultiStepForm from "./MultiStepForm";
+import Breadcrumbs from "./Breadcrumbs";
 
 const Mainboard = () => {
   return (
@@ -25,12 +26,14 @@ const Mainboard = () => {
           </li>
         </ul>
       </div>
+      <Breadcrumbs />
       {/* <Route exact path="/dashbaord" component={dashboard} /> */}
       <Mainsearch />
       {/* <Prompt /> */}
       {/* <CompanyProfile /> */}
       {/* <ProfessionalProfile /> */}
       {/* <CompanyListing /> */}
+
       <Outlet />
     </div>
   );

@@ -1,0 +1,1836 @@
+[
+  {
+    "_id": {
+      "$oid": "66ea3fc59d26fb9eb0cd4c6d"
+    },
+    "annual_revenue": 700000,
+    "city": "Red Bank",
+    "country": "United States",
+    "employee_metrics": {
+      "date": "",
+      "departments": [
+        {
+          "churned": 0,
+          "functions": null,
+          "new": 1,
+          "retained": 15
+        },
+        {
+          "churned": 0,
+          "functions": "sales",
+          "new": 0,
+          "retained": 2
+        },
+        {
+          "churned": 0,
+          "functions": "finance",
+          "new": 0,
+          "retained": 1
+        },
+        {
+          "churned": 0,
+          "functions": "marketing",
+          "new": 0,
+          "retained": 5
+        },
+        {
+          "churned": 0,
+          "functions": "human_resources",
+          "new": 0,
+          "retained": 1
+        },
+        {
+          "churned": 0,
+          "functions": "engineering",
+          "new": 0,
+          "retained": 8
+        },
+        {
+          "churned": 0,
+          "functions": "business_development",
+          "new": 0,
+          "retained": 5
+        },
+        {
+          "churned": 0,
+          "functions": "product_management",
+          "new": 0,
+          "retained": 4
+        },
+        {
+          "churned": 0,
+          "functions": "arts_and_design",
+          "new": 0,
+          "retained": 3
+        }
+      ]
+    },
+    "founded_year": 2002,
+    "id": "54a1363369702d46f0320601",
+    "industry": "design",
+    "keywords": [
+      "ecommerce",
+      "adobe experience manager",
+      "social media strategies & development",
+      "user experience",
+      "content management",
+      "sitecore",
+      "digital transformation",
+      "digital strategy",
+      "digital consulting",
+      "agile",
+      "digital product innovation",
+      "customer experience strategy",
+      "marketing strategy",
+      "analytics",
+      "cms",
+      "devops",
+      "websites",
+      "digital products",
+      "prototyping",
+      "business consulting",
+      "customer experience research",
+      "usability testing",
+      "content strategy",
+      "design systems",
+      "digital campaigns",
+      "marketing automation",
+      "hubspot",
+      "salesforce",
+      "product engineering",
+      "web development"
+    ],
+    "location": "United States",
+    "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/66e2b1a2f8b3970001b25542/picture",
+    "name": "DefinedLogic",
+    "postal_code": "07701-1147",
+    "social media": {
+      "facebook_url": "https://facebook.com/definedlogicllc",
+      "linkedin_url": "http://www.linkedin.com/company/definedlogic",
+      "website_url": "http://www.definedlogic.com",
+      "x_url": "https://twitter.com/DefinedLogicLLC"
+    },
+    "state": "New Jersey",
+    "street_address": "200 Monmouth St",
+    "technology_used": {
+      "current_technologies": [
+        {
+          "category": "Other",
+          "name": "AI",
+          "uid": "ai"
+        },
+        {
+          "category": "Frameworks and Programming Languages",
+          "name": "Android",
+          "uid": "android"
+        },
+        {
+          "category": "Social Login",
+          "name": "Facebook Login (Connect)",
+          "uid": "facebook_login"
+        },
+        {
+          "category": "Widgets",
+          "name": "Facebook Widget",
+          "uid": "facebook_widget"
+        },
+        {
+          "category": "Frameworks and Programming Languages",
+          "name": "Flutter",
+          "uid": "flutter"
+        },
+        {
+          "category": "Tag Management",
+          "name": "Google Tag Manager",
+          "uid": "google_tag_manager"
+        },
+        {
+          "category": "Marketing Automation",
+          "name": "Hubspot",
+          "uid": "hubspot"
+        },
+        {
+          "category": "Other",
+          "name": "IoT",
+          "uid": "iot"
+        },
+        {
+          "category": "Social Login",
+          "name": "Linkedin Login",
+          "uid": "linkedin_login"
+        },
+        {
+          "category": "Other",
+          "name": "Linkedin Widget",
+          "uid": "linkedin_widget"
+        },
+        {
+          "category": "Other",
+          "name": "Microsoft Office 365",
+          "uid": "office_365"
+        },
+        {
+          "category": "Other",
+          "name": "Mobile Friendly",
+          "uid": "mobile_friendly"
+        },
+        {
+          "category": "Email Providers",
+          "name": "Outlook",
+          "uid": "outlook"
+        },
+        {
+          "category": "Marketing Automation",
+          "name": "Pardot",
+          "uid": "pardot"
+        },
+        {
+          "category": "Frameworks and Programming Languages",
+          "name": "Python",
+          "uid": "python"
+        },
+        {
+          "category": "Other",
+          "name": "Remote",
+          "uid": "remote"
+        },
+        {
+          "category": "Other",
+          "name": "Render",
+          "uid": "render"
+        },
+        {
+          "category": "Customer Relationship Management",
+          "name": "Salesforce",
+          "uid": "salesforce"
+        },
+        {
+          "category": "CMS",
+          "name": "SharePoint",
+          "uid": "sharepoint"
+        },
+        {
+          "category": "Business Intelligence",
+          "name": "Sigma",
+          "uid": "sigma"
+        },
+        {
+          "category": "Online Video Platforms",
+          "name": "YouTube",
+          "uid": "youtube"
+        }
+      ]
+    }
+  },
+  {
+    "_id": {
+      "$oid": "66ea3fc99d26fb9eb0cd4c70"
+    },
+    "annual_revenue": 1000000,
+    "city": "New York",
+    "country": "United States",
+    "employee_metrics": {
+      "date": "",
+      "departments": [
+        {
+          "churned": 0,
+          "functions": null,
+          "new": 0,
+          "retained": 12
+        },
+        {
+          "churned": 0,
+          "functions": "operations",
+          "new": 0,
+          "retained": 1
+        },
+        {
+          "churned": 0,
+          "functions": "finance",
+          "new": 0,
+          "retained": 1
+        },
+        {
+          "churned": 0,
+          "functions": "marketing",
+          "new": 0,
+          "retained": 2
+        },
+        {
+          "churned": 0,
+          "functions": "information_technology",
+          "new": 0,
+          "retained": 1
+        },
+        {
+          "churned": 0,
+          "functions": "engineering",
+          "new": 0,
+          "retained": 3
+        },
+        {
+          "churned": 0,
+          "functions": "product_management",
+          "new": 0,
+          "retained": 1
+        },
+        {
+          "churned": 0,
+          "functions": "arts_and_design",
+          "new": 0,
+          "retained": 2
+        },
+        {
+          "churned": 0,
+          "functions": "entrepreneurship",
+          "new": 0,
+          "retained": 2
+        },
+        {
+          "churned": 0,
+          "functions": "support",
+          "new": 0,
+          "retained": 1
+        }
+      ]
+    },
+    "founded_year": 2015,
+    "id": "5a9e720ca6da98d95ff9dd3c",
+    "industry": "information technology & services",
+    "keywords": [
+      "small & medium businesses",
+      "marketplaces",
+      "design",
+      "information technology",
+      "seo",
+      "web design & development",
+      "artificial intelligence",
+      "saas",
+      "small business management",
+      "online payments & invoicing",
+      "small business marketing",
+      "commerce platform",
+      "professional service providers"
+    ],
+    "location": "United States",
+    "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/66e437de46f6ee0001ed0137/picture",
+    "name": "B12",
+    "postal_code": "10003",
+    "social media": {
+      "facebook_url": "https://www.facebook.com/TeamB12/",
+      "linkedin_url": "http://www.linkedin.com/company/b12io",
+      "website_url": "http://www.b12.io",
+      "x_url": "https://twitter.com/b12io"
+    },
+    "state": "New York",
+    "street_address": "89 5th Avenue",
+    "technology_used": {
+      "current_technologies": [
+        {
+          "category": "Affiliate Advertising Network",
+          "name": "Affiliate Window",
+          "uid": "affiliate_window"
+        },
+        {
+          "category": "Hosting",
+          "name": "Amazon AWS",
+          "uid": "amazon_aws"
+        },
+        {
+          "category": "CSS and JavaScript Libraries",
+          "name": "Backbone JS Library",
+          "uid": "backbone_js_library"
+        },
+        {
+          "category": "CSS and JavaScript Libraries",
+          "name": "Bootstrap Framework",
+          "uid": "bootstrap_framework"
+        },
+        {
+          "category": "Comments",
+          "name": "Disqus",
+          "uid": "disqus"
+        },
+        {
+          "category": "Frameworks and Programming Languages",
+          "name": "Django",
+          "uid": "django"
+        },
+        {
+          "category": "Retargeting",
+          "name": "Facebook Custom Audiences",
+          "uid": "facebook_web_custom_audiences"
+        },
+        {
+          "category": "Social Login",
+          "name": "Facebook Login (Connect)",
+          "uid": "facebook_login"
+        },
+        {
+          "category": "Widgets",
+          "name": "Facebook Widget",
+          "uid": "facebook_widget"
+        },
+        {
+          "category": "Other",
+          "name": "FullStory",
+          "uid": "fullstory"
+        },
+        {
+          "category": "Hosting",
+          "name": "GitHub Hosting",
+          "uid": "github_hosting"
+        },
+        {
+          "category": "Email Providers",
+          "name": "Gmail",
+          "uid": "gmail"
+        },
+        {
+          "category": "Advertising Networks",
+          "name": "Google AdSense",
+          "uid": "google_adsense"
+        },
+        {
+          "category": "Advertising Networks",
+          "name": "Google AdWords Conversion",
+          "uid": "google_adwords_conversion"
+        },
+        {
+          "category": "Analytics and Tracking",
+          "name": "Google Analytics",
+          "uid": "google_analytics"
+        },
+        {
+          "category": "Other",
+          "name": "Google Apps",
+          "uid": "google_apps"
+        },
+        {
+          "category": "Fonts",
+          "name": "Google Font API",
+          "uid": "google_font_api"
+        },
+        {
+          "category": "Other",
+          "name": "Google Maps",
+          "uid": "google_maps"
+        },
+        {
+          "category": "Other",
+          "name": "Google Maps (Non Paid Users)",
+          "uid": "google_maps_non_paid_users"
+        },
+        {
+          "category": "Tag Management",
+          "name": "Google Tag Manager",
+          "uid": "google_tag_manager"
+        },
+        {
+          "category": "Recruitment",
+          "name": "Greenhouse.io",
+          "uid": "greenhouse_io"
+        },
+        {
+          "category": "Marketing Automation",
+          "name": "Hubspot",
+          "uid": "hubspot"
+        },
+        {
+          "category": "Support and Feedback",
+          "name": "Intercom",
+          "uid": "intercom"
+        },
+        {
+          "category": "Email Delivery",
+          "name": "Mailchimp Mandrill",
+          "uid": "mailchimp_mandrill"
+        },
+        {
+          "category": "Analytics and Tracking",
+          "name": "Mixpanel",
+          "uid": "mixpanel"
+        },
+        {
+          "category": "Other",
+          "name": "Mobile Friendly",
+          "uid": "mobile_friendly"
+        },
+        {
+          "category": "CMS",
+          "name": "Netlify",
+          "uid": "netlify"
+        },
+        {
+          "category": "Load Balancers",
+          "name": "Nginx",
+          "uid": "nginx"
+        },
+        {
+          "category": "Email Delivery",
+          "name": "Rackspace MailGun",
+          "uid": "rackspace_mailgun"
+        },
+        {
+          "category": "Other",
+          "name": "Remote",
+          "uid": "remote"
+        },
+        {
+          "category": "Domain Name Services",
+          "name": "Route 53",
+          "uid": "route_53"
+        },
+        {
+          "category": "Customer Relationship Management",
+          "name": "Salesforce",
+          "uid": "salesforce"
+        },
+        {
+          "category": "Chats",
+          "name": "Salesforce Live Agent",
+          "uid": "salesforce_live_agent"
+        },
+        {
+          "category": "Payments",
+          "name": "Stripe",
+          "uid": "stripe"
+        },
+        {
+          "category": "Online Video Platforms",
+          "name": "Vimeo",
+          "uid": "vimeo"
+        },
+        {
+          "category": "CSS and JavaScript Libraries",
+          "name": "VueJS",
+          "uid": "vue_js_library"
+        },
+        {
+          "category": "CMS",
+          "name": "Webflow",
+          "uid": "webflow"
+        },
+        {
+          "category": "CMS",
+          "name": "WordPress.org",
+          "uid": "wordpress_org"
+        },
+        {
+          "category": "Online Video Platforms",
+          "name": "YouTube",
+          "uid": "youtube"
+        }
+      ]
+    }
+  },
+  {
+    "_id": {
+      "$oid": "66ea3fcc40ddda71d4cd4c7a"
+    },
+    "annual_revenue": 1000000,
+    "city": "Resana",
+    "country": "Italy",
+    "employee_metrics": {
+      "date": "",
+      "departments": [
+        {
+          "churned": 0,
+          "functions": null,
+          "new": 0,
+          "retained": 1
+        }
+      ]
+    },
+    "founded_year": 2014,
+    "id": "56d70ac7f3e5bb11700021f0",
+    "industry": "information technology & services",
+    "keywords": [
+      "customer experience",
+      "customer satisfaction",
+      "prenotazione automatica appuntamenti",
+      "customer retention",
+      "omnichannel solutions",
+      "voicebot",
+      "chatbot",
+      "artificial intelligence",
+      "automotive",
+      "sanita",
+      "immobiliare",
+      "service automotive",
+      "contact center",
+      "call center",
+      "ai conversazionale",
+      "google partner",
+      "aws",
+      "omnichannel",
+      "centralino virtuale",
+      "whatsapp",
+      "csi",
+      "customer service index",
+      "bdc",
+      "business development center",
+      "gestione appuntamento",
+      "chiamate in entrata"
+    ],
+    "location": "Italy",
+    "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/66c6e6a6ed14220001b4f720/picture",
+    "name": "Esosphera - Smile CX GAIA",
+    "postal_code": "31023",
+    "social media": {
+      "facebook_url": "https://www.facebook.com/Esosphera/",
+      "linkedin_url": "http://www.linkedin.com/company/esosphera",
+      "website_url": "http://www.esosphera.com",
+      "x_url": null
+    },
+    "state": "Veneto",
+    "street_address": "10A Via Boscalto",
+    "technology_used": {
+      "current_technologies": [
+        {
+          "category": "Other",
+          "name": "AI",
+          "uid": "ai"
+        },
+        {
+          "category": "Load Balancers",
+          "name": "Apache",
+          "uid": "apache"
+        },
+        {
+          "category": "Ad Servers",
+          "name": "DoubleClick",
+          "uid": "doubleclick"
+        },
+        {
+          "category": "Advertising Networks",
+          "name": "DoubleClick Conversion",
+          "uid": "doubleclick_conversion"
+        },
+        {
+          "category": "CMS",
+          "name": "Drupal",
+          "uid": "drupal"
+        },
+        {
+          "category": "Retargeting",
+          "name": "Facebook Custom Audiences",
+          "uid": "facebook_web_custom_audiences"
+        },
+        {
+          "category": "Social Login",
+          "name": "Facebook Login (Connect)",
+          "uid": "facebook_login"
+        },
+        {
+          "category": "Widgets",
+          "name": "Facebook Widget",
+          "uid": "facebook_widget"
+        },
+        {
+          "category": "Email Providers",
+          "name": "Gmail",
+          "uid": "gmail"
+        },
+        {
+          "category": "Analytics and Tracking",
+          "name": "Google Analytics",
+          "uid": "google_analytics"
+        },
+        {
+          "category": "Other",
+          "name": "Google Apps",
+          "uid": "google_apps"
+        },
+        {
+          "category": "Retargeting",
+          "name": "Google Dynamic Remarketing",
+          "uid": "google_dynamic_remarketing"
+        },
+        {
+          "category": "Fonts",
+          "name": "Google Font API",
+          "uid": "google_font_api"
+        },
+        {
+          "category": "Tag Management",
+          "name": "Google Tag Manager",
+          "uid": "google_tag_manager"
+        },
+        {
+          "category": "Marketing Automation",
+          "name": "Hubspot",
+          "uid": "hubspot"
+        },
+        {
+          "category": "Advertising Networks",
+          "name": "Linkedin Marketing Solutions",
+          "uid": "linkedin_display_ads__formerly_bizo"
+        },
+        {
+          "category": "Other",
+          "name": "MailChimp SPF",
+          "uid": "mailchimp_spf"
+        },
+        {
+          "category": "Other",
+          "name": "Mobile Friendly",
+          "uid": "mobile_friendly"
+        },
+        {
+          "category": "Marketing Automation",
+          "name": "Pardot",
+          "uid": "pardot"
+        },
+        {
+          "category": "CSS and JavaScript Libraries",
+          "name": "React Redux",
+          "uid": "react_redux"
+        },
+        {
+          "category": "Customer Relationship Management",
+          "name": "Salesforce",
+          "uid": "salesforce"
+        },
+        {
+          "category": "CMS",
+          "name": "WordPress.org",
+          "uid": "wordpress_org"
+        },
+        {
+          "category": "Online Video Platforms",
+          "name": "YouTube",
+          "uid": "youtube"
+        },
+        {
+          "category": "Captcha",
+          "name": "reCAPTCHA",
+          "uid": "recaptcha"
+        }
+      ]
+    }
+  },
+  {
+    "_id": {
+      "$oid": "66ea3fcd9d26fb9eb0cd4c73"
+    },
+    "annual_revenue": 717000,
+    "city": "Kingston",
+    "country": "United States",
+    "employee_metrics": {
+      "date": "",
+      "departments": [
+        {
+          "churned": 0,
+          "functions": null,
+          "new": 0,
+          "retained": 8
+        },
+        {
+          "churned": 0,
+          "functions": "accounting",
+          "new": 0,
+          "retained": 1
+        },
+        {
+          "churned": 0,
+          "functions": "sales",
+          "new": 0,
+          "retained": 1
+        },
+        {
+          "churned": 0,
+          "functions": "operations",
+          "new": 0,
+          "retained": 1
+        },
+        {
+          "churned": 0,
+          "functions": "marketing",
+          "new": 0,
+          "retained": 3
+        },
+        {
+          "churned": 0,
+          "functions": "engineering",
+          "new": 0,
+          "retained": 1
+        },
+        {
+          "churned": 0,
+          "functions": "business_development",
+          "new": 0,
+          "retained": 5
+        },
+        {
+          "churned": 0,
+          "functions": "product_management",
+          "new": 0,
+          "retained": 1
+        },
+        {
+          "churned": 0,
+          "functions": "consulting",
+          "new": 0,
+          "retained": 1
+        },
+        {
+          "churned": 0,
+          "functions": "support",
+          "new": 0,
+          "retained": 1
+        }
+      ]
+    },
+    "founded_year": 2003,
+    "id": "5e1378c1912b3d00f05a603f",
+    "industry": "information technology & services",
+    "keywords": [
+      "nonprofits",
+      "advancement",
+      "development",
+      "crm",
+      "donor databases",
+      "change management",
+      "higher ed",
+      "affinaquest",
+      "advancement implementations",
+      "implementations",
+      "millennium",
+      "banner",
+      "blackbaud",
+      "raisers edge",
+      "system rejuvenation",
+      "advancement operation assessments",
+      "fundraising"
+    ],
+    "location": "United States",
+    "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/66e17a78ad524700010d0393/picture",
+    "name": "Sleek Consulting LLC",
+    "postal_code": "03848",
+    "social media": {
+      "facebook_url": "https://www.facebook.com/ConsultSleek/",
+      "linkedin_url": "http://www.linkedin.com/company/sleekconsulting",
+      "website_url": "http://www.sleekconsulting.com",
+      "x_url": "https://twitter.com/ConsultSleek"
+    },
+    "state": "New Hampshire",
+    "street_address": "158 Main St",
+    "technology_used": {
+      "current_technologies": [
+        {
+          "category": "Other",
+          "name": "AI",
+          "uid": "ai"
+        },
+        {
+          "category": "Frameworks and Programming Languages",
+          "name": "Android",
+          "uid": "android"
+        },
+        {
+          "category": "Load Balancers",
+          "name": "Apache",
+          "uid": "apache"
+        },
+        {
+          "category": "Web Accelerators",
+          "name": "CloudFlare",
+          "uid": "cloudflare"
+        },
+        {
+          "category": "Fonts",
+          "name": "Google Font API",
+          "uid": "google_font_api"
+        },
+        {
+          "category": "Tag Management",
+          "name": "Google Tag Manager",
+          "uid": "google_tag_manager"
+        },
+        {
+          "category": "Marketing Automation",
+          "name": "Hubspot",
+          "uid": "hubspot"
+        },
+        {
+          "category": "Other",
+          "name": "Mobile Friendly",
+          "uid": "mobile_friendly"
+        },
+        {
+          "category": "Email Providers",
+          "name": "Outlook",
+          "uid": "outlook"
+        },
+        {
+          "category": "Marketing Automation",
+          "name": "Pardot",
+          "uid": "pardot"
+        },
+        {
+          "category": "Frameworks and Programming Languages",
+          "name": "Python",
+          "uid": "python"
+        },
+        {
+          "category": "Customer Relationship Management",
+          "name": "Salesforce",
+          "uid": "salesforce"
+        },
+        {
+          "category": "CMS",
+          "name": "WordPress.org",
+          "uid": "wordpress_org"
+        },
+        {
+          "category": "Captcha",
+          "name": "reCAPTCHA",
+          "uid": "recaptcha"
+        }
+      ]
+    }
+  },
+  {
+    "_id": {
+      "$oid": "66ea3fd29d26fb9eb0cd4c76"
+    },
+    "annual_revenue": 870000,
+    "city": "Denver",
+    "country": "United States",
+    "employee_metrics": {
+      "date": "",
+      "departments": [
+        {
+          "churned": 0,
+          "functions": null,
+          "new": 0,
+          "retained": 5
+        },
+        {
+          "churned": 0,
+          "functions": "sales",
+          "new": 0,
+          "retained": 1
+        },
+        {
+          "churned": 0,
+          "functions": "consulting",
+          "new": 0,
+          "retained": 1
+        }
+      ]
+    },
+    "founded_year": 2003,
+    "id": "54a11c8969702d7fe67ac200",
+    "industry": "information technology & services",
+    "keywords": [
+      "real estate internet marketing",
+      "custom website design",
+      "real estate websites",
+      "real estate coaching",
+      "real estate education",
+      "short sale training",
+      "agent lead management",
+      "real estate webinars",
+      "crm"
+    ],
+    "location": "United States",
+    "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/66e2a005d6ca6a0001af7d35/picture",
+    "name": "Real Pro Systems",
+    "postal_code": "80246",
+    "social media": {
+      "facebook_url": "https://facebook.com/RealProSystems",
+      "linkedin_url": "http://www.linkedin.com/company/real-pro-systems",
+      "website_url": "http://www.realprosystems.com",
+      "x_url": "https://twitter.com/realprosystems"
+    },
+    "state": "Colorado",
+    "street_address": "400 S Colorado Blvd",
+    "technology_used": {
+      "current_technologies": [
+        {
+          "category": "Hosting",
+          "name": "CloudFlare Hosting",
+          "uid": "cloudflare_hosting"
+        },
+        {
+          "category": "Domain Name Services",
+          "name": "Cloudflare DNS",
+          "uid": "cloudflare_dns"
+        },
+        {
+          "category": "Analytics and Tracking",
+          "name": "Facebook Conversion Tracking",
+          "uid": "facebook_conversion_tracking"
+        },
+        {
+          "category": "Marketing Automation",
+          "name": "Marketo",
+          "uid": "marketo"
+        },
+        {
+          "category": "Email Providers",
+          "name": "Outlook",
+          "uid": "outlook"
+        },
+        {
+          "category": "Marketing Automation",
+          "name": "Pardot",
+          "uid": "pardot"
+        },
+        {
+          "category": "Customer Relationship Management",
+          "name": "Salesforce",
+          "uid": "salesforce"
+        },
+        {
+          "category": "Email Delivery",
+          "name": "Sendgrid",
+          "uid": "sendgrid"
+        }
+      ]
+    }
+  },
+  {
+    "_id": {
+      "$oid": "66ea3fd240ddda71d4cd4c7d"
+    },
+    "annual_revenue": 819000,
+    "city": "Riga",
+    "country": "Latvia",
+    "employee_metrics": {
+      "date": "",
+      "departments": [
+        {
+          "churned": 0,
+          "functions": null,
+          "new": 0,
+          "retained": 1
+        },
+        {
+          "churned": 0,
+          "functions": "sales",
+          "new": 0,
+          "retained": 1
+        },
+        {
+          "churned": 0,
+          "functions": "engineering",
+          "new": 0,
+          "retained": 2
+        }
+      ]
+    },
+    "founded_year": 2014,
+    "id": "60495aa29b0849000119598b",
+    "industry": "information technology & services",
+    "keywords": ["it system integration", "business intelligence", "erp"],
+    "location": "Latvia",
+    "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/66e1136a426d1800013aa659/picture",
+    "name": "Visma Latvija",
+    "postal_code": "1013",
+    "social media": {
+      "facebook_url": "https://facebook.com/VISMALatvia",
+      "linkedin_url": "http://www.linkedin.com/company/visma-latvia",
+      "website_url": "http://www.visma.lv",
+      "x_url": "https://twitter.com/VISMALatvia"
+    },
+    "state": "Rigas pilseta",
+    "street_address": "11 Sporta iela",
+    "technology_used": {
+      "current_technologies": [
+        {
+          "category": "Frameworks and Programming Languages",
+          "name": "ASP.NET",
+          "uid": "asp_net"
+        },
+        {
+          "category": "Hosting",
+          "name": "CloudFlare Hosting",
+          "uid": "cloudflare_hosting"
+        },
+        {
+          "category": "Analytics and Tracking",
+          "name": "Data Analytics",
+          "uid": "data analytics"
+        },
+        {
+          "category": "Advertising Networks",
+          "name": "DoubleClick Conversion",
+          "uid": "doubleclick_conversion"
+        },
+        {
+          "category": "CMS",
+          "name": "EPiServer",
+          "uid": "episerver"
+        },
+        {
+          "category": "Marketing Automation",
+          "name": "Eloqua",
+          "uid": "eloqua"
+        },
+        {
+          "category": "Retargeting",
+          "name": "Facebook Custom Audiences",
+          "uid": "facebook_web_custom_audiences"
+        },
+        {
+          "category": "Social Login",
+          "name": "Facebook Login (Connect)",
+          "uid": "facebook_login"
+        },
+        {
+          "category": "Widgets",
+          "name": "Facebook Widget",
+          "uid": "facebook_widget"
+        },
+        {
+          "category": "Email Providers",
+          "name": "Gmail",
+          "uid": "gmail"
+        },
+        {
+          "category": "Advertising Networks",
+          "name": "Google AdSense",
+          "uid": "google_adsense"
+        },
+        {
+          "category": "Advertising Networks",
+          "name": "Google AdWords Conversion",
+          "uid": "google_adwords_conversion"
+        },
+        {
+          "category": "Analytics and Tracking",
+          "name": "Google Analytics",
+          "uid": "google_analytics"
+        },
+        {
+          "category": "Other",
+          "name": "Google Apps",
+          "uid": "google_apps"
+        },
+        {
+          "category": "Retargeting",
+          "name": "Google Dynamic Remarketing",
+          "uid": "google_dynamic_remarketing"
+        },
+        {
+          "category": "Fonts",
+          "name": "Google Font API",
+          "uid": "google_font_api"
+        },
+        {
+          "category": "Other",
+          "name": "Google Maps",
+          "uid": "google_maps"
+        },
+        {
+          "category": "Other",
+          "name": "Google Maps (Non Paid Users)",
+          "uid": "google_maps_non_paid_users"
+        },
+        {
+          "category": "Retargeting",
+          "name": "Google Remarketing",
+          "uid": "google_remarketing"
+        },
+        {
+          "category": "Tag Management",
+          "name": "Google Tag Manager",
+          "uid": "google_tag_manager"
+        },
+        {
+          "category": "Analytics and Tracking",
+          "name": "Hotjar",
+          "uid": "hotjar"
+        },
+        {
+          "category": "Load Balancers",
+          "name": "Microsoft-IIS",
+          "uid": "microsoft-iis"
+        },
+        {
+          "category": "Other",
+          "name": "Mobile Friendly",
+          "uid": "mobile_friendly"
+        },
+        {
+          "category": "Widgets",
+          "name": "OneTrust",
+          "uid": "onetrust"
+        },
+        {
+          "category": "Marketing Automation",
+          "name": "Pardot",
+          "uid": "pardot"
+        },
+        {
+          "category": "Other",
+          "name": "Remote",
+          "uid": "remote"
+        },
+        {
+          "category": "Customer Relationship Management",
+          "name": "SAP",
+          "uid": "sap"
+        },
+        {
+          "category": "Customer Relationship Management",
+          "name": "Salesforce",
+          "uid": "salesforce"
+        },
+        {
+          "category": "CSS and JavaScript Libraries",
+          "name": "VueJS",
+          "uid": "vue_js_library"
+        },
+        {
+          "category": "Support and Feedback",
+          "name": "Zendesk",
+          "uid": "zendesk"
+        },
+        {
+          "category": "Captcha",
+          "name": "reCAPTCHA",
+          "uid": "recaptcha"
+        }
+      ]
+    }
+  },
+  {
+    "_id": {
+      "$oid": "66ea3fd540ddda71d4cd4c80"
+    },
+    "annual_revenue": 555000,
+    "city": "Merignac",
+    "country": "France",
+    "employee_metrics": {
+      "date": "",
+      "departments": [
+        {
+          "churned": 0,
+          "functions": null,
+          "new": 0,
+          "retained": 7
+        },
+        {
+          "churned": 0,
+          "functions": "sales",
+          "new": 0,
+          "retained": 1
+        },
+        {
+          "churned": 0,
+          "functions": "human_resources",
+          "new": 0,
+          "retained": 1
+        },
+        {
+          "churned": 0,
+          "functions": "engineering",
+          "new": 0,
+          "retained": 1
+        }
+      ]
+    },
+    "founded_year": 1996,
+    "id": "54a1273c69702d9b8b766700",
+    "industry": "information technology & services",
+    "keywords": [
+      "digital analytics",
+      "digital intelligence",
+      "data mining",
+      "data management",
+      "analytics dashboards",
+      "analytics consulting",
+      "mobile analytics",
+      "app analytics",
+      "data privacy",
+      "data quality",
+      "big data",
+      "data visualization",
+      "analytics suite",
+      "business analytics",
+      "web analytics",
+      "data scientist",
+      "key performance indicators",
+      "data exports",
+      "data science",
+      "machine learning"
+    ],
+    "location": "France",
+    "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/66e5af14b3d7a30001ee7415/picture",
+    "name": "AT Internet, a Piano company",
+    "postal_code": "33700",
+    "social media": {
+      "facebook_url": "https://www.facebook.com/atinternet.analytics",
+      "linkedin_url": "http://www.linkedin.com/company/at-internet",
+      "website_url": "http://www.atinternet.com",
+      "x_url": "https://twitter.com/AT_Internet"
+    },
+    "state": "Nouvelle-Aquitaine",
+    "street_address": "85 Avenue John Fitzgerald Kennedy",
+    "technology_used": {
+      "current_technologies": [
+        {
+          "category": "Other",
+          "name": "AI",
+          "uid": "ai"
+        },
+        {
+          "category": "Analytics and Tracking",
+          "name": "AT Internet",
+          "uid": "at_internet"
+        },
+        {
+          "category": "Social Sharing",
+          "name": "AddThis",
+          "uid": "addthis"
+        },
+        {
+          "category": "Search Marketing",
+          "name": "Adobe Media Optimizer",
+          "uid": "adobe_media_optimizer"
+        },
+        {
+          "category": "Online Testing Platforms",
+          "name": "Adobe TestAndTarget",
+          "uid": "adobe_testandtarget"
+        },
+        {
+          "category": "Load Balancers",
+          "name": "Apache",
+          "uid": "apache"
+        },
+        {
+          "category": "Advertising Networks",
+          "name": "Bing Ads",
+          "uid": "bing_ads"
+        },
+        {
+          "category": "CSS and JavaScript Libraries",
+          "name": "Bootstrap Framework",
+          "uid": "bootstrap_framework"
+        },
+        {
+          "category": "Ad Servers",
+          "name": "DoubleClick",
+          "uid": "doubleclick"
+        },
+        {
+          "category": "Advertising Networks",
+          "name": "DoubleClick Conversion",
+          "uid": "doubleclick_conversion"
+        },
+        {
+          "category": "Retargeting",
+          "name": "Facebook Custom Audiences",
+          "uid": "facebook_web_custom_audiences"
+        },
+        {
+          "category": "Social Login",
+          "name": "Facebook Login (Connect)",
+          "uid": "facebook_login"
+        },
+        {
+          "category": "Widgets",
+          "name": "Facebook Widget",
+          "uid": "facebook_widget"
+        },
+        {
+          "category": "Advertising Networks",
+          "name": "Google AdWords Conversion",
+          "uid": "google_adwords_conversion"
+        },
+        {
+          "category": "Retargeting",
+          "name": "Google Dynamic Remarketing",
+          "uid": "google_dynamic_remarketing"
+        },
+        {
+          "category": "Fonts",
+          "name": "Google Font API",
+          "uid": "google_font_api"
+        },
+        {
+          "category": "Tag Management",
+          "name": "Google Tag Manager",
+          "uid": "google_tag_manager"
+        },
+        {
+          "category": "Advertising Networks",
+          "name": "Linkedin Marketing Solutions",
+          "uid": "linkedin_display_ads__formerly_bizo"
+        },
+        {
+          "category": "Marketing Automation",
+          "name": "Manticore",
+          "uid": "manticore"
+        },
+        {
+          "category": "Other",
+          "name": "Micro",
+          "uid": "micro"
+        },
+        {
+          "category": "Other",
+          "name": "Mobile Friendly",
+          "uid": "mobile_friendly"
+        },
+        {
+          "category": "Email Providers",
+          "name": "Outlook",
+          "uid": "outlook"
+        },
+        {
+          "category": "Marketing Automation",
+          "name": "Pardot",
+          "uid": "pardot"
+        },
+        {
+          "category": "Domain Name Services",
+          "name": "Route 53",
+          "uid": "route_53"
+        },
+        {
+          "category": "Customer Relationship Management",
+          "name": "SAP",
+          "uid": "sap"
+        },
+        {
+          "category": "Customer Relationship Management",
+          "name": "Salesforce",
+          "uid": "salesforce"
+        },
+        {
+          "category": "Tag Management",
+          "name": "Tag Commander",
+          "uid": "tag_commander"
+        },
+        {
+          "category": "Video Advertising Networks",
+          "name": "TubeMogul",
+          "uid": "tubemogul"
+        },
+        {
+          "category": "CMS",
+          "name": "WordPress.org",
+          "uid": "wordpress_org"
+        },
+        {
+          "category": "Online Video Platforms",
+          "name": "YouTube",
+          "uid": "youtube"
+        },
+        {
+          "category": "Chats",
+          "name": "Zopim",
+          "uid": "zopim"
+        }
+      ]
+    }
+  },
+  {
+    "_id": {
+      "$oid": "66ea3fd59d26fb9eb0cd4c79"
+    },
+    "annual_revenue": 1000000,
+    "city": "Stockholm",
+    "country": "Sweden",
+    "employee_metrics": {
+      "date": "",
+      "departments": []
+    },
+    "founded_year": 2011,
+    "id": "54a1202769702d86b6b11002",
+    "industry": "information technology & services",
+    "keywords": [
+      "mobile",
+      "enterprise software",
+      "information technology",
+      "software",
+      "fakturering",
+      "invoicing",
+      "payments",
+      "customer experience",
+      "fintech"
+    ],
+    "location": "Sweden",
+    "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/66e5ee727a84880001862c01/picture",
+    "name": "Billogram",
+    "postal_code": "111 52",
+    "social media": {
+      "facebook_url": "https://www.facebook.com/billogram.company",
+      "linkedin_url": "http://www.linkedin.com/company/billogram-ab",
+      "website_url": "http://www.billogram.com",
+      "x_url": "https://twitter.com/billogram"
+    },
+    "state": "Stockholm County",
+    "street_address": "1 Klara soedra Kyrkogata",
+    "technology_used": {
+      "current_technologies": [
+        {
+          "category": "Search Marketing",
+          "name": "Adobe Media Optimizer",
+          "uid": "adobe_media_optimizer"
+        },
+        {
+          "category": "Online Testing Platforms",
+          "name": "Adobe TestAndTarget",
+          "uid": "adobe_testandtarget"
+        },
+        {
+          "category": "Hosting",
+          "name": "Amazon AWS",
+          "uid": "amazon_aws"
+        },
+        {
+          "category": "Email Delivery",
+          "name": "Amazon SES",
+          "uid": "amazon_ses"
+        },
+        {
+          "category": "CMS",
+          "name": "Atlassian Cloud",
+          "uid": "atlassian_cloud"
+        },
+        {
+          "category": "Web Performance Monitoring",
+          "name": "Cedexis Radar",
+          "uid": "cedexis_radar"
+        },
+        {
+          "category": "Retargeting",
+          "name": "Facebook Custom Audiences",
+          "uid": "facebook_web_custom_audiences"
+        },
+        {
+          "category": "Social Login",
+          "name": "Facebook Login (Connect)",
+          "uid": "facebook_login"
+        },
+        {
+          "category": "Widgets",
+          "name": "Facebook Widget",
+          "uid": "facebook_widget"
+        },
+        {
+          "category": "Hosting",
+          "name": "GitHub Hosting",
+          "uid": "github_hosting"
+        },
+        {
+          "category": "Email Providers",
+          "name": "Gmail",
+          "uid": "gmail"
+        },
+        {
+          "category": "Other",
+          "name": "Google Apps",
+          "uid": "google_apps"
+        },
+        {
+          "category": "Fonts",
+          "name": "Google Font API",
+          "uid": "google_font_api"
+        },
+        {
+          "category": "Tag Management",
+          "name": "Google Tag Manager",
+          "uid": "google_tag_manager"
+        },
+        {
+          "category": "Advertising Networks",
+          "name": "Linkedin Marketing Solutions",
+          "uid": "linkedin_display_ads__formerly_bizo"
+        },
+        {
+          "category": "Other",
+          "name": "Linkedin Widget",
+          "uid": "linkedin_widget"
+        },
+        {
+          "category": "Analytics and Tracking",
+          "name": "Mixpanel",
+          "uid": "mixpanel"
+        },
+        {
+          "category": "Other",
+          "name": "Mobile Friendly",
+          "uid": "mobile_friendly"
+        },
+        {
+          "category": "Load Balancers",
+          "name": "Nginx",
+          "uid": "nginx"
+        },
+        {
+          "category": "Marketing Automation",
+          "name": "Pardot",
+          "uid": "pardot"
+        },
+        {
+          "category": "CSS and JavaScript Libraries",
+          "name": "React",
+          "uid": "react"
+        },
+        {
+          "category": "CSS and JavaScript Libraries",
+          "name": "React Redux",
+          "uid": "react_redux"
+        },
+        {
+          "category": "Other",
+          "name": "Remote",
+          "uid": "remote"
+        },
+        {
+          "category": "Domain Name Services",
+          "name": "Route 53",
+          "uid": "route_53"
+        },
+        {
+          "category": "Frameworks and Programming Languages",
+          "name": "Ruby On Rails",
+          "uid": "ruby_on_rails"
+        },
+        {
+          "category": "Customer Relationship Management",
+          "name": "Salesforce",
+          "uid": "salesforce"
+        },
+        {
+          "category": "Video Advertising Networks",
+          "name": "TubeMogul",
+          "uid": "tubemogul"
+        },
+        {
+          "category": "Hosting",
+          "name": "Vercel",
+          "uid": "vercel"
+        },
+        {
+          "category": "Online Video Platforms",
+          "name": "Vimeo",
+          "uid": "vimeo"
+        },
+        {
+          "category": "Support and Feedback",
+          "name": "Zendesk",
+          "uid": "zendesk"
+        }
+      ]
+    }
+  },
+  {
+    "_id": {
+      "$oid": "66ea3fd840ddda71d4cd4c83"
+    },
+    "annual_revenue": 722000,
+    "city": "London",
+    "country": "United Kingdom",
+    "employee_metrics": {
+      "date": "",
+      "departments": [
+        {
+          "churned": 0,
+          "functions": null,
+          "new": 0,
+          "retained": 1
+        },
+        {
+          "churned": 0,
+          "functions": "sales",
+          "new": 0,
+          "retained": 3
+        },
+        {
+          "churned": 0,
+          "functions": "engineering",
+          "new": 0,
+          "retained": 1
+        },
+        {
+          "churned": 0,
+          "functions": "consulting",
+          "new": 0,
+          "retained": 2
+        }
+      ]
+    },
+    "founded_year": 2013,
+    "id": "54a1344969702d3a9c262200",
+    "industry": "information technology & services",
+    "keywords": [
+      "e-commerce",
+      "saas",
+      "sales & marketing",
+      "cloud management",
+      "enterprise software",
+      "cloud computing",
+      "consumer internet",
+      "software",
+      "internet",
+      "information technology",
+      "ecommerce sales conversion optimisation",
+      "real time analytics",
+      "social proof & persuasive messaging",
+      "online retail",
+      "online travel",
+      "a",
+      "b testing",
+      "shopping",
+      "sales",
+      "digital marketing",
+      "online marketing",
+      "online fashion",
+      "etail",
+      "ecommerce",
+      "conversion optimisation",
+      "conversion optimization",
+      "conversionrateoptimisation"
+    ],
+    "location": "United Kingdom",
+    "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/66e88f73927ab70001ff7b01/picture",
+    "name": "Taggstar",
+    "postal_code": "WC1V 6PX",
+    "social media": {
+      "facebook_url": "https://facebook.com/taggstar",
+      "linkedin_url": "http://www.linkedin.com/company/taggstar",
+      "website_url": "http://www.taggstar.com",
+      "x_url": "https://twitter.com/taggstartalk"
+    },
+    "state": "England",
+    "street_address": "136 High Holborn",
+    "technology_used": {
+      "current_technologies": [
+        {
+          "category": "Other",
+          "name": "AI",
+          "uid": "ai"
+        },
+        {
+          "category": "Email Delivery",
+          "name": "Amazon SES",
+          "uid": "amazon_ses"
+        },
+        {
+          "category": "Advertising Networks",
+          "name": "Basis",
+          "uid": "basis"
+        },
+        {
+          "category": "CSS and JavaScript Libraries",
+          "name": "Bootstrap Framework",
+          "uid": "bootstrap_framework"
+        },
+        {
+          "category": "Email Providers",
+          "name": "Gmail",
+          "uid": "gmail"
+        },
+        {
+          "category": "Other",
+          "name": "Google Apps",
+          "uid": "google_apps"
+        },
+        {
+          "category": "Hosting",
+          "name": "Google Cloud Hosting",
+          "uid": "google_cloud_hosting"
+        },
+        {
+          "category": "Tag Management",
+          "name": "Google Tag Manager",
+          "uid": "google_tag_manager"
+        },
+        {
+          "category": "Analytics and Tracking",
+          "name": "Leadfeeder",
+          "uid": "leadfeeder"
+        },
+        {
+          "category": "Advertising Networks",
+          "name": "Linkedin Marketing Solutions",
+          "uid": "linkedin_display_ads__formerly_bizo"
+        },
+        {
+          "category": "Other",
+          "name": "Mobile Friendly",
+          "uid": "mobile_friendly"
+        },
+        {
+          "category": "Load Balancers",
+          "name": "Nginx",
+          "uid": "nginx"
+        },
+        {
+          "category": "Marketing Automation",
+          "name": "Pardot",
+          "uid": "pardot"
+        },
+        {
+          "category": "Retargeting",
+          "name": "Perfect Audience",
+          "uid": "perfect_audience"
+        },
+        {
+          "category": "Other",
+          "name": "Remote",
+          "uid": "remote"
+        },
+        {
+          "category": "Customer Reviews",
+          "name": "Reviews",
+          "uid": "reviews"
+        },
+        {
+          "category": "Domain Name Services",
+          "name": "Route 53",
+          "uid": "route_53"
+        },
+        {
+          "category": "Customer Relationship Management",
+          "name": "SAP",
+          "uid": "sap"
+        },
+        {
+          "category": "Customer Relationship Management",
+          "name": "Salesforce",
+          "uid": "salesforce"
+        },
+        {
+          "category": "Marketing Automation",
+          "name": "SharpSpring",
+          "uid": "sharpspring"
+        },
+        {
+          "category": "CMS",
+          "name": "WP Engine",
+          "uid": "wp_engine"
+        },
+        {
+          "category": "Online Video Platforms",
+          "name": "Wistia",
+          "uid": "wistia"
+        },
+        {
+          "category": "CMS",
+          "name": "WordPress.org",
+          "uid": "wordpress_org"
+        },
+        {
+          "category": "Support and Feedback",
+          "name": "Zendesk",
+          "uid": "zendesk"
+        },
+        {
+          "category": "Captcha",
+          "name": "reCAPTCHA",
+          "uid": "recaptcha"
+        }
+      ]
+    }
+  }
+]

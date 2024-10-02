@@ -105,7 +105,9 @@ const SessionsListing = () => {
             {data.slice(0, 2).map((session, index) => (
               <li key={index}>
                 <span>
-                  <Link to={"/session/?session_id=" + session._id["$oid"]}>
+                  <Link
+                    to={"/session-profile/?session_id=" + session._id["$oid"]}
+                  >
                     {session.session_name}
                   </Link>
                 </span>

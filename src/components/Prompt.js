@@ -152,6 +152,32 @@ const Prompt = () => {
 
   // console.log(thread_id);
   // setThreadData("");
+
+  const addChatMessage = (newResponse) => {
+    setThreadData((prevResponses) => [...prevResponses, newResponse]);
+  };
+
+  const modifyLastItem = (analysis_response, timestamp, message) => {
+    // Access the last item
+    const lastItemIndex = threadData.length - 1;
+    const lastItem = threadData[lastItemIndex];
+
+    // Create a new modified object
+    const modifiedItem = {
+      ...lastItem,
+      analysis_result: analysis_response,
+      timestamp: timestamp,
+      message: message,
+    };
+
+    // Create a new array with the modified last object
+    const newItems = [...threadData];
+    newItems[lastItemIndex] = modifiedItem;
+
+    // Update the state
+    setThreadData(newItems);
+  };
+
   const fetchData = async () => {
     setLoading(true);
     const url = "http://35.225.202.65:5001/locate_thread";
@@ -230,12 +256,21 @@ const Prompt = () => {
   };
   const navigate = useNavigate();
   const handleSubmit = async (event) => {
-    setLoading(true);
+    // setLoading(true);
 
     event.preventDefault();
     // alert(search);
     // promptSearch(true);
     console.log(typeId);
+
+    const newThread = {
+      analysis_result: "",
+      llm_prompt: search,
+      message: "",
+      timestamp: "",
+    };
+
+    addChatMessage(newThread);
 
     if (thread_id != null) {
       console.log("thread true");
@@ -246,20 +281,27 @@ const Prompt = () => {
         thread_id: thread_id,
       };
 
+      setSearch("");
+      setTypeId("");
+      setTypeName("");
+      setIsType(false);
+      setSelectedItem("");
       const url =
         "http://35.225.202.65:5001/existing_thread_gpt_prompt_analysis";
 
       try {
         const response = await makePostRequest(url, formData); // Submit the form data
         setNewPromptResponse(response); // Set the submitted data from the response
+
         if (response["message"] === "Processed successfully") {
-          setSearch("");
-          setTypeId("");
-          setTypeName("");
-          setIsType(false);
-          setSelectedItem("");
           // console.log("message true");
-          fetchData();
+          // fetchData();
+
+          modifyLastItem(
+            response.analysis_result,
+            response.timestamp,
+            response.message
+          );
         } else {
           // console.log("message false");
         }
@@ -428,7 +470,11 @@ const Prompt = () => {
                     </div>
 
                     <div className="msg-text">
-                      <p>{thread["analysis_result"]}</p>
+                      <p>
+                        {thread["analysis_result"] === ""
+                          ? "loading..."
+                          : thread["analysis_result"]}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -436,65 +482,67 @@ const Prompt = () => {
             ))
           : ""}
       </div>
-      <form onSubmit={handleSubmit}>
-        <div className="search-box d-flex align-items-center">
-          {/* <div className="s-icon-box">
+      <div className="chat-box">
+        <form onSubmit={handleSubmit}>
+          <div className="search-box d-flex align-items-center">
+            {/* <div className="s-icon-box">
             <FontAwesomeIcon icon={faPaperclip} />
           </div> */}
-          <div className="searchbar flex-grow-1">
-            <input
-              type="text"
-              placeholder="How Can I Help You"
-              value={search}
-              onChange={(e) => {
-                setSearch(e.target.value);
-              }}
-            />
-          </div>
-          <div class="profile-type">
-            {isType ? (
-              <button class="badge-btn">
-                {typeName} <FontAwesomeIcon icon={faXmark} />
-              </button>
-            ) : (
-              ""
-            )}
-          </div>
-          {/* <div>{selectedItem}<  /div> */}
-          <div className="search-options d-flex align-items-center">
-            <div className="input-group">
-              <label className="input-group-text" htmlFor="">
-                {/* <FontAwesomeIcon icon={faUser} /> */}
-              </label>
-              <select
-                className="form-select"
-                aria-label="Filter select"
-                value={selectedItem}
-                onChange={handleTypeChange}
-              >
-                <option value="">Select Type</option>
-                <option value="company">Company</option>
-                <option value="personal">Person</option>
-              </select>
-            </div>
-            <div>
+            <div className="searchbar flex-grow-1">
               <input
-                onChange={handleTypeID}
-                hidden
-                value={typeId}
                 type="text"
-                name=""
-                id=""
+                placeholder="How Can I Help You"
+                value={search}
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                }}
               />
             </div>
-            <div className="button-box">
-              <button type="submit" className="btn">
-                Go
-              </button>
+            <div class="profile-type">
+              {isType ? (
+                <button class="badge-btn">
+                  {typeName} <FontAwesomeIcon icon={faXmark} />
+                </button>
+              ) : (
+                ""
+              )}
+            </div>
+            {/* <div>{selectedItem}<  /div> */}
+            <div className="search-options d-flex align-items-center">
+              <div className="input-group">
+                <label className="input-group-text" htmlFor="">
+                  {/* <FontAwesomeIcon icon={faUser} /> */}
+                </label>
+                <select
+                  className="form-select"
+                  aria-label="Filter select"
+                  value={selectedItem}
+                  onChange={handleTypeChange}
+                >
+                  <option value="">Select Type</option>
+                  <option value="company">Company</option>
+                  <option value="personal">Person</option>
+                </select>
+              </div>
+              <div>
+                <input
+                  onChange={handleTypeID}
+                  hidden
+                  value={typeId}
+                  type="text"
+                  name=""
+                  id=""
+                />
+              </div>
+              <div className="button-box">
+                <button type="submit" className="btn">
+                  Go
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
 
       <Modal
         className="option-list-modal"

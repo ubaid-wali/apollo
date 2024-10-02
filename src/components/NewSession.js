@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import buttonStars from "../img/button-stars.png";
 import { Modal, Button, Form } from "react-bootstrap";
 import Multiselect from "multiselect-react-dropdown";
@@ -28,13 +28,10 @@ const NewSession = () => {
   const [showSessionModal, setShowSessionModal] = useState(false);
   const [technologies, setTechnologies] = useState([]);
   const [industries, setIndustries] = useState([]);
+  const [companies, setCompanies] = useState([]);
   const [locations, setLocations] = useState([]);
-
-  const handleCloseSessionModal = () => setShowSessionModal(false);
-
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({});
-
   const [show, setShow] = useState(false);
   const [sessionName, setsessionName] = useState("");
   const [selectedCompanyName, setSelectedCompanyName] = useState([]);
@@ -42,7 +39,6 @@ const NewSession = () => {
   const [selectedTechnology, setSelectedTechnology] = useState([]);
   const [selectedIndustry, setSelectedIndustry] = useState([]);
   const [selectedLocation, setSelectedLocation] = useState([]);
-
   const [data, setData] = useState(null);
 
   // State to handle loading state
@@ -51,56 +47,15 @@ const NewSession = () => {
   // State to handle errors
   const [error, setError] = useState(null);
 
-  // Fetch data on component mount using axios
-
-  useEffect(() => {
-    const fetchTechnologies = async () => {
-      const url = `http://34.169.65.115:5000/api/v1/get-attrs?type=technologies`;
-      // const data = { thread_id: thread_id }; // Replace with actual data to send
-
-      try {
-        const response = await makeGetRequest(url);
-        setLoading(false);
-        setTechnologies(response); // Set the initial data from the response
-      } catch (error) {
-        console.error("Error fetching initial data", error);
-      }
-    };
-    const fetchIndustries = async () => {
-      const url = `http://34.169.65.115:5000/api/v1/get-attrs?type=industries`;
-      // const data = { thread_id: thread_id }; // Replace with actual data to send
-
-      try {
-        const response = await makeGetRequest(url);
-        setLoading(false);
-        setIndustries(response); // Set the initial data from the response
-      } catch (error) {
-        console.error("Error fetching initial data", error);
-      }
-    };
-    const fetchLocations = async () => {
-      const url = `http://34.169.65.115:5000/api/v1/get-attrs?type=locations`;
-      // const data = { thread_id: thread_id }; // Replace with actual data to send
-
-      try {
-        const response = await makeGetRequest(url);
-        setLoading(false);
-        setLocations(response); // Set the initial data from the response
-      } catch (error) {
-        console.error("Error fetching initial data", error);
-      }
-    };
-    fetchTechnologies();
-    fetchIndustries();
-    fetchLocations();
-  }, []); // Empty array ensures the effect runs only on page load
-
-  const categories = technologies.map((item) => item.category);
+  const handleCloseSessionModal = () => setShowSessionModal(false);
+  const categories = technologies.map((item) => item.cleaned_name);
   const industriesValue = industries.map((item) => item.cleaned_name);
   const locationArray = locations.map((item) => item.cleaned_name);
-  // console.log(technologies);
-  // console.log(industriesValue);
-  // console.log(locationArray);
+  const companiesArray = companies.map((item) => item.name);
+
+  console.log(companies);
+
+  console.log(companiesArray);
   const handleNext = () => {
     setStep(step + 1);
   };
@@ -113,9 +68,6 @@ const NewSession = () => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
-  // const sessionNameHandle = (e) => {
-  //   setsessionName(e.target.value);
-  // };
 
   const submitSession = async () => {
     const url = `http://34.169.65.115:5000/api/v1/sessions`;
@@ -158,6 +110,49 @@ const NewSession = () => {
     setSelected(selectedList);
   };
 
+  const fetchAttr = async (e, type) => {
+    if (e !== "" && type !== "") {
+      console.log("Tech Change");
+      console.log(e);
+      const url = `http://34.169.65.115:5000/api/v1/get-attrs?type=${type}&q=${e}`;
+      console.log("Fetch Technologies");
+      try {
+        const response = await makeGetRequest(url);
+        setLoading(false);
+
+        if (type === "technologies") {
+          setTechnologies(response);
+        } else if (type === "locations") {
+          setLocations(response);
+        } else if (type === "industries") {
+          setIndustries(response);
+        }
+      } catch (error) {
+        console.error("Error fetching initial data", error);
+      }
+    }
+  };
+
+  useEffect(() => {
+    const fetchCompanies = async () => {
+      const url = `http://34.169.65.115:5000/api/v1/companies`;
+
+      try {
+        const response = await makeGetRequest(url);
+        setLoading(false);
+        // setSelectedCompanyName(response);
+        console.log(response);
+        const companies = response.map((item) => (item.name ? item.name : ""));
+        console.log(companies);
+        setCompanies(companies);
+      } catch (error) {
+        console.error("Error fetching initial data", error);
+      }
+    };
+
+    fetchCompanies();
+  }, []);
+
   return (
     <div>
       <button
@@ -199,7 +194,7 @@ const NewSession = () => {
                     <Form.Label>Company Name</Form.Label>
                     <Multiselect
                       isObject={false}
-                      options={["DTC Force", "XYZ Corp", "ABC Solutions"]} // List of company names
+                      options={companies} // List of company names
                       selectedValues={selectedCompanyName}
                       onSelect={(selectedList) =>
                         handleSelect(selectedList, setSelectedCompanyName)
@@ -208,6 +203,7 @@ const NewSession = () => {
                         handleSelect(selectedList, setSelectedCompanyName)
                       }
                       placeholder="Select Company Name"
+                      avoidHighlightFirstOption={true}
                     />
                   </Form.Group>
 
@@ -224,6 +220,7 @@ const NewSession = () => {
                         handleSelect(selectedList, setSelectedRevenue)
                       }
                       placeholder="Select Revenue"
+                      avoidHighlightFirstOption={true}
                     />
                   </Form.Group>
 
@@ -239,13 +236,20 @@ const NewSession = () => {
                       onRemove={(selectedList) =>
                         handleSelect(selectedList, setSelectedTechnology)
                       }
+                      onSearch={(e) => {
+                        fetchAttr(e, "technologies");
+                      }}
                       placeholder="Select Technology"
+                      emptyRecordMsg="Search Technology"
+                      closeOnSelect={false}
+                      avoidHighlightFirstOption={true}
                     />
                   </Form.Group>
 
                   <Form.Group className="f-group">
                     <Form.Label>Industry</Form.Label>
                     <Multiselect
+                      // ref={multiselectRef}
                       isObject={false}
                       options={industriesValue}
                       selectedValues={selectedIndustry}
@@ -256,6 +260,12 @@ const NewSession = () => {
                         handleSelect(selectedList, setSelectedIndustry)
                       }
                       placeholder="Select Industry"
+                      onSearch={(e) => {
+                        fetchAttr(e, "industries");
+                      }}
+                      emptyRecordMsg="Search Industry"
+                      closeOnSelect={true}
+                      avoidHighlightFirstOption={true}
                     />
                   </Form.Group>
 
@@ -272,6 +282,12 @@ const NewSession = () => {
                         handleSelect(selectedList, setSelectedLocation)
                       }
                       placeholder="Select Location"
+                      onSearch={(e) => {
+                        fetchAttr(e, "locations");
+                      }}
+                      emptyRecordMsg="Search Location"
+                      closeOnSelect={true}
+                      avoidHighlightFirstOption={true}
                     />
                   </Form.Group>
                 </div>

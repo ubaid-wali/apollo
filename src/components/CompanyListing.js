@@ -24,7 +24,7 @@ const makePostRequest = async (url) => {
     throw error;
   }
 };
-const CompanyListing = () => {
+const CompanyListing = (props) => {
   // State to store API data
   const [companies, setCompanies] = useState(null);
 
@@ -39,15 +39,21 @@ const CompanyListing = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = "http://34.169.65.115:5000/api/v1/companies";
-      // const data = { thread_id: thread_id }; // Replace with actual data to send
-
-      try {
-        const response = await makePostRequest(url);
+      if (props.data) {
         setLoading(false);
-        setCompanies(response); // Set the initial data from the response
-      } catch (error) {
-        console.error("Error fetching initial data", error);
+        setCompanies(props.data);
+        console.log(props.data);
+      } else {
+        const url = "http://34.169.65.115:5000/api/v1/companies";
+        // const data = { thread_id: thread_id }; // Replace with actual data to send
+
+        try {
+          const response = await makePostRequest(url);
+          setLoading(false);
+          setCompanies(response); // Set the initial data from the response
+        } catch (error) {
+          console.error("Error fetching initial data", error);
+        }
       }
     };
     fetchData();
@@ -120,8 +126,7 @@ const CompanyListing = () => {
                     <td>
                       <Link
                         to={
-                          "/company-profile/?company_id=" +
-                          company._id["$oid"]
+                          "/company-profile/?company_id=" + company._id["$oid"]
                         }
                         className="arrow-box"
                       >

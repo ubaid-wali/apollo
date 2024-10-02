@@ -14,10 +14,10 @@ import CompanyProfile from "./components/CompanyProfile";
 import CompanyListing from "./components/CompanyListing";
 import Prompt from "./components/Prompt";
 import ProfessionalProfile from "./components/ProfessionalProfile";
-import SessionProgress from "./components/SessionProgress";
 import ProfessionalsListing from "./components/ProfessionalsListing";
 import CompanySearch from "./components/CompanySearch";
 import AllSessions from "./components/AllSessions";
+import SessionProfile from "./components/SessionProfile";
 
 const Layout = () => {
   return (
@@ -42,6 +42,10 @@ const router = createBrowserRouter([
         element: <AllSessions />,
       },
       {
+        path: "/session-profile",
+        element: <SessionProfile />,
+      },
+      {
         path: "/prompt",
         element: <Prompt />,
       },
@@ -60,10 +64,6 @@ const router = createBrowserRouter([
       {
         path: "/professional-profile",
         element: <ProfessionalProfile />,
-      },
-      {
-        path: "/session-progress",
-        element: <SessionProgress />,
       },
       // {
       //   path: "/company-profile",

@@ -37,6 +37,16 @@ const CompanyProfile = (props) => {
   // State to handle errors
   const [error, setError] = useState(null);
 
+  const [showAllServices, setshowAllServices] = useState(false);
+  const [showAllTechnologies, setshowAllTechnologies] = useState(false);
+
+  const toggleShowMore = () => {
+    setshowAllServices((prevshowAllServices) => !prevshowAllServices);
+  };
+  const toggleTechShowMore = () => {
+    setshowAllTechnologies((prevshowAllServices) => !prevshowAllServices);
+  };
+
   // Fetch data on component mount using axios
   // const apiUrl = "http://34.169.65.115:5000/api/v1/companies";
 
@@ -144,10 +154,30 @@ const CompanyProfile = (props) => {
                 <a href="#">Atlassian Cloud</a>
                 <a href="#">Facebook Custom Audiences</a>
                 <a href="#">Circle</a> */}
-                {companyData.technology_used.current_technologies.map(
+                {/* {companyData.technology_used.current_technologies.map(
                   (tech, index) => (
                     <a href="#">{tech.name}</a>
                   )
+                )} */}
+
+                {showAllTechnologies
+                  ? companyData.technology_used.current_technologies.map(
+                      (tech, index) => <a href="#">{tech.name}</a>
+                    )
+                  : companyData.technology_used.current_technologies
+                      .slice(0, 3)
+                      .map((tech, index) => <a href="#">{tech.name}</a>)}
+
+                {companyData.technology_used.current_technologies.length >
+                  3 && (
+                  <div>
+                    <button
+                      className="btn btn-sm rounded-100 btn-secondary"
+                      onClick={toggleTechShowMore}
+                    >
+                      {showAllTechnologies ? "See Less" : "See More"}
+                    </button>
+                  </div>
                 )}
               </div>
             </div>
@@ -155,9 +185,24 @@ const CompanyProfile = (props) => {
             <div className="card">
               <h3>Services</h3>
               <div className="t-badges">
-                {companyData.keywords.map((keyword, index) => (
-                  <a href="#">{keyword}</a>
-                ))}
+                {showAllServices
+                  ? companyData.keywords.map((keyword, index) => (
+                      <a href="#">{keyword}</a>
+                    ))
+                  : companyData.keywords
+                      .slice(0, 3)
+                      .map((keyword, index) => <a href="#">{keyword}</a>)}
+
+                {companyData.keywords.length > 3 && (
+                  <div>
+                    <button
+                      className="btn btn-sm rounded-100 btn-secondary"
+                      onClick={toggleShowMore}
+                    >
+                      {showAllServices ? "See Less" : "See More"}
+                    </button>
+                  </div>
+                )}
                 {/* <a href="#">Mobile App Development</a>
                 <a href="#">Business Consulting</a>
                 <a href="#">Video Consulting</a>

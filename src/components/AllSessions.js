@@ -17,6 +17,7 @@ const AllSessions = () => {
   // State to handle errors
   const [error, setError] = useState(null);
   // Fetch data on component mount using axios
+
   useEffect(() => {
     const apiUrl = "http://34.169.65.115:5000/api/v1/sessions";
 
@@ -83,7 +84,12 @@ const AllSessions = () => {
                         ))}
                     </td> */}
                     <td>
-                      <Link to={session._id["$oid"]} className="arrow-box">
+                      <Link
+                        to={
+                          "/session-profile/?session_id=" + session._id["$oid"]
+                        }
+                        className="arrow-box"
+                      >
                         <FontAwesomeIcon icon={faArrowRightLong} />
                       </Link>
                     </td>
